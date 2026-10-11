@@ -4,10 +4,14 @@ A local Rust and Python workbench for PCB layout experiments. Supply a circuit
 with exact footprints or a KiCad project, inspect placements, try routing or
 repair, and review the resulting native checks and manufacturing-file exports.
 
-**Public alpha: [`v0.1.0-alpha.1`](https://github.com/steph4n-gh/netlist-shatter-viz/releases/tag/v0.1.0-alpha.1).** This is an experimental software release.
-**Pico Ultimate remains incomplete: `RGB_DATA` and `I2C_SCL` are open, and there
-is no completed Pico engineering handoff.** No included design has been
-physically validated or approved for manufacturing release.
+**Public alpha: [`v0.1.0-alpha.2`](https://github.com/steph4n-gh/netlist-shatter-viz/releases/tag/v0.1.0-alpha.2).** This is an experimental software release.
+Automatic **Finish** now discovers bounded copper cuts and restores affected
+nets together, including the `RGB_DATA` and `I2C_SCL` completion work on the
+retained original CORE03 native Pico project. Acceptance preserves the original
+source contacts and supplied rules; the release's `VERIFICATION.json` identifies
+the exact input and checked result. This native Finish scope is separate from
+cold routing the built-in Pico model. No included design has been physically
+validated or approved for manufacturing release.
 
 ## Start
 

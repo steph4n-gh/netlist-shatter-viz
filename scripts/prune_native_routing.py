@@ -13,7 +13,7 @@ def consolidate_vias(directory,worker,kicad,via_ids,rounds,prefix,protected,prof
     from shortcut_route import consolidate_dangling_vias
     from optimize_kicad import unchanged_other_nets,filled_planes_preserved,findings
     from routing_screen import screen,nonregression
-    from native_restoration import NAME,audit,validate
+    from native_restoration import NAME,audit,validate,copy_baseline
     directory=Path(directory);d=directory/(prefix+'-via-consolidation');d.mkdir();copy_assets(directory,d)
     rules={}
     for suffix in ('.kicad_pcb','.kicad_pro','.kicad_dru'):
@@ -25,6 +25,7 @@ def consolidate_vias(directory,worker,kicad,via_ids,rounds,prefix,protected,prof
     baseline=directory/NAME
     try:
         validate(baseline)
+        copy_baseline(baseline,d/NAME)
         with (d/'consolidation.log').open('w') as log:
             def native(mode):
                 try:subprocess.run(list(map(str,worker+[mode,d])),stdout=log,stderr=subprocess.STDOUT,check=True,timeout=30)

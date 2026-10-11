@@ -1,16 +1,28 @@
 # Alpha limitations
 
-`v0.1.0-alpha.1` releases the local software workbench. It does not release a
+`v0.1.0-alpha.2` releases the local software workbench. It does not release a
 qualified hardware product or approve any board for fabrication or assembly.
 
-## Pico Ultimate is incomplete
+## Pico native Finish scope
 
-The corrected-source Pico routing work retains two open connections:
-**`RGB_DATA` and `I2C_SCL`**. It has no completed engineering handoff. Recent
-private alternative-path comparisons did not complete either affected cluster
-within the same 24-state/60-second limits. Isolated target paths passed candidate
-guards, but did not restore the neighboring copper or receive full native
-acceptance. Those experimental policies are not part of this alpha.
+The alpha 2 completion work concerns the retained original CORE03 native Pico
+project, including **`RGB_DATA` and `I2C_SCL`**, through the ordinary **Finish**
+workflow. The software discovers bounded copper cuts and restores affected nets
+without a prepared cut-board upload or manual trace coordinates. It keeps the
+input unchanged and checks surviving source contacts and original rules before
+accepting a result.
+
+Qualification of this input requires all **66 original restoration obligations**
+and **64 supplied profile rules**, zero enabled native errors, warnings or open
+connections, and the workflow's independent export checks. The release's
+`VERIFICATION.json` records the exact input identity and executed results.
+The source package does not bundle that development input or a Pico
+manufacturing archive. This scope does not establish cold routing of the
+separate built-in Pico model or completion of arbitrary Pico revisions.
+
+Alpha 1 retained those two open connections. Earlier target-only candidate
+paths did not establish complete native acceptance; that history remains in the
+[release notes](RELEASE_NOTES.md).
 
 A search timeout or exhausted state limit is a software search miss. It does
 not establish that a physical route is impossible.

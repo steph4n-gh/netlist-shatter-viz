@@ -60,7 +60,7 @@ def passage_sections(domain,start,end,count,spacing,check_time):
     return proposals
 
 
-def route_joint(data,nets,seconds=60,maximum_states=24):
+def route_joint(data,nets,seconds=60,maximum_states=24,ordinary_first=False):
     if not math.isfinite(seconds) or seconds<=0 or type(maximum_states)is not int or maximum_states<1:
         raise ValueError('Joint routing requires positive finite budgets')
     nets=sorted(set(nets))
@@ -250,8 +250,10 @@ def route_joint(data,nets,seconds=60,maximum_states=24):
     complete=False
     try:
         remember()
-        # Reserve passage lanes before any endpoint leg can consume their room.
-        for lanes,detail in bundle_candidates():
+        # Measured copper cuts can expose direct component joins before
+        # floating passage lanes consume the same finite search budget.
+        if ordinary_first:complete=search()
+        for lanes,detail in ([] if complete else bundle_candidates()):
             check_time();saved=checkpoint();row={'bundle':detail};trials.append(row)
             try:
                 for net,path in lanes:emit(net,path)
@@ -266,7 +268,7 @@ def route_joint(data,nets,seconds=60,maximum_states=24):
             rollback(saved)
             if states>=maximum_states:break
             if time.perf_counter()>=deadline:break
-        if not complete:
+        if not complete and not ordinary_first:
             complete=search()
     except (ValueError,TimeoutError)as error:trials.append({'error':str(error)})
     counts=status() if complete else best['components']

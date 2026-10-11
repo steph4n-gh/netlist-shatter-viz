@@ -1,6 +1,6 @@
 [package]
 name = "netlist-shatter-viz"
-version = "0.1.0-alpha.1"
+version = "0.1.0-alpha.2"
 edition = "2024"
 license = "MIT"
 description = "Local PCB placement, routing and guarded engineering export workbench"

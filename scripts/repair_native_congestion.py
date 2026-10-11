@@ -447,25 +447,69 @@ def native_partition_preservation(before,after,removed,allowed):
         'declared_net_tie_contacts_exact':declared_ties_exact,'partitions':rows}
 
 
-def boundary_cut_choices(boundary,primitives,layers,locked,target,maximum):
+def native_cut_preparation(before,after,removed,allowed):
+    """Check exact native survivors before a private disconnected restoration.
+
+    The final partition gate still requires every survivor group restored.
+    Preparation permits only the declared cuts while that work is pending.
+    """
+    result=native_partition_preservation(before,after,removed,allowed)
+    fields=('measured_cuts_valid','unselected_native_items_exact','allowed_additions_only',
+        'native_contacts_clean','physical_contact_schema_valid','surviving_contact_polygons_exact',
+        'declared_net_tie_contacts_exact')
+    result['empty_copper_inventory_exact']=set(after.get('empty_cu_items',[]))==set(before.get('empty_cu_items',[]))-set(removed)
+    result['cut_only_inventory_exact']=set(after['native_items'])==set(before['native_items'])-set(removed)
+    result['restoration_pending']=True
+    result['pass']=(before.get('contact_schema')=='physical-Cu-islands/1' and
+        all(result[field] for field in fields) and result['empty_copper_inventory_exact'] and result['cut_only_inventory_exact'])
+    return result
+
+
+def boundary_cut_choices(boundary,primitives,layers,locked,target,maximum,pad_contacts=()):
     """Try connected same-owner boundary paths before isolated fragments."""
-    groups=[];support={}
+    groups=[];track_groups=[];support={};locality={}
     for row in boundary['rows']:
         if not row['editable_copper']:continue
         for item in row['native_primitives']:
             uid=item['uuid'];primitive=primitives.get(uid)
             if primitive is None or primitive['net'] in locked|{target} or primitive.get('arc'):continue
             support[uid]=support.get(uid,0)+row['boundary_support_mm']
+            if 'frontier_distance_mm' in row:
+                value=(row['frontier_index'],round(row['frontier_distance_mm'],6))
+                locality[uid]=min(locality.get(uid,value),value)
             points={(layer,*point) for layer in (layers if 'at' in primitive else [primitive['layer']])
                     for point in ([primitive['at']] if 'at' in primitive else [primitive['start'],primitive['end']])}
-            matches=[group for group in groups if group['net']==primitive['net'] and group['points']&points]
-            for group in matches:groups.remove(group)
-            groups.append({'net':primitive['net'],'points':points.union(*(group['points'] for group in matches)),
-                'ids':{uid}.union(*(group['ids'] for group in matches))})
+            # A via is an endpoint for a track-only fanout path. Keep that
+            # smaller prefix even when a full multi-layer owner chain is long.
+            for collection in ([groups] if 'at' in primitive else [groups,track_groups]):
+                matches=[group for group in collection if group['net']==primitive['net'] and group['points']&points]
+                for group in matches:collection.remove(group)
+                collection.append({'net':primitive['net'],'points':points.union(*(group['points'] for group in matches)),
+                    'ids':{uid}.union(*(group['ids'] for group in matches))})
     def rank(ids):
+        if locality:
+            return (min(locality.get(uid,(math.inf,math.inf)) for uid in ids),
+                not any('at' in primitives[uid] for uid in ids),len(ids),
+                -sum(support[uid] for uid in ids),sorted(ids))
         # Retaining vias preserves native drill shadows and their contact Cu.
         return (any('at' in primitives[uid] for uid in ids),-sum(support[uid] for uid in ids),len(ids),sorted(ids))
-    paths=sorted((frozenset(group['ids']) for group in groups if 1<len(group['ids'])<=maximum),key=rank)
+    prefixes=set()
+    for group in track_groups:
+        ends={}
+        for uid in group['ids']:
+            p=primitives[uid]
+            for point in (p['start'],p['end']):ends.setdefault((p['layer'],*point),[]).append(uid)
+        for start in sorted(point for point in ends if (group['net'],*point) in pad_contacts):
+            point=start;used=set()
+            while len(used)<maximum:
+                options=[uid for uid in ends[point] if uid not in used]
+                if len(options)!=1:break
+                uid=options[0];used.add(uid);p=primitives[uid]
+                point=next(((p['layer'],*q) for q in (p['start'],p['end']) if (p['layer'],*q)!=point),None)
+                if point is None:break
+                if len(used)>1:prefixes.add(frozenset(used))
+    whole={frozenset(group['ids']) for group in groups+track_groups if 1<len(group['ids'])<=maximum}
+    paths=sorted(prefixes|whole,key=rank)
     singles=sorted((frozenset([uid]) for uid in support),key=rank)
     return paths,singles
 
@@ -476,16 +520,63 @@ def measured_owner_cut(geometry,selection,source_sha256,protected=()):
         raise ValueError('Measured cut belongs to different source copper')
     primitives={p['uuid']:p for p in geometry['tracks']+geometry['vias']}
     codes={int(c) for c,n in geometry['nets'].items() if n['name'] in selection['selected_nets']}
-    locked={p['net'] for p in primitives.values() if p.get('locked',True)}|{
+    locked={p['net'] for p in primitives.values() if p.get('locked',True) or p.get('arc')}|{
         int(c) for c,n in geometry['nets'].items() if n['name'] in protected}
     ids=selection['peeled_native_uuids']
     if not ids or len(ids)!=len(set(ids)) or codes&locked or any(uid not in primitives or
         primitives[uid]['net'] not in codes or primitives[uid].get('locked',True) or primitives[uid].get('arc') for uid in ids):
         raise ValueError('Invalid measured owner cut')
-    return list(ids)
+    return native_drill_cap_cuts(geometry,ids,codes,protected)
 
 
-def measured_component_cuts(geometry,drc,profile,protected=(),seconds=15,maximum=4,states=24):
+def native_drill_cap_cuts(geometry,removed,allowed,protected=()):
+    """Declare every track endpoint exposed by a selected native via drill.
+
+    Removing a drill changes the physical copper of overlapping tracks even
+    when their native records are untouched. These tracks are replacements,
+    never exceptions to exact surviving-contact preservation.
+    """
+    primitives={p['uuid']:p for p in geometry['tracks']+geometry['vias']}
+    locked={p['net'] for p in primitives.values() if p.get('locked',True) or p.get('arc')}|{
+        int(c) for c,n in geometry['nets'].items() if n['name'] in protected}
+    ids=list(removed);cut=set(ids);allowed=set(allowed)
+    if len(cut)!=len(ids) or any(u not in primitives or primitives[u]['net'] not in allowed
+        or primitives[u]['net'] in locked or primitives[u].get('arc') for u in cut):
+        raise ValueError('Invalid native drill replacement cut')
+    for via in geometry['vias']:
+        if via['uuid'] not in cut:continue
+        center=Point(via['at']);radius=via['drill_mm']/2
+        for track in geometry['tracks']:
+            if track['uuid'] in cut:continue
+            if LineString([track['start'],track['end']]).distance(center)>=radius+track['width']/2:continue
+            if track['net'] not in allowed or track['net'] in locked or track.get('arc'):
+                raise ValueError('Removed via drill changes protected or unselected native copper')
+            cut.add(track['uuid'])
+    return ids+sorted(cut-set(ids))
+
+
+def reachable_frontier_nodes(graph,bad,parts,maximum=None):
+    """Include the legal via-reached walls behind a blocked terminal pocket."""
+    contacts={tuple(n) for pair in bad for group in pair['groups']
+              for n in graph['terminal_contacts'][group] if tuple(n) in parts}
+    if not contacts:return []
+    first=min(contacts,key=lambda n:(parts[n].area,n))
+    starts=next({tuple(n) for n in group if tuple(n) in parts}
+                for group in graph['terminal_contacts'] if first in map(tuple,group))
+    edges={}
+    for row in graph.get('via_edges',[]):
+        a,b=tuple(row['from']),tuple(row['to'])
+        edges.setdefault(a,set()).add(b);edges.setdefault(b,set()).add(a)
+    reached=set(starts);todo=[(n,0) for n in sorted(starts)]
+    for node,cost in todo:
+        if maximum is not None and cost>=maximum:continue
+        for other in sorted(edges.get(node,())):
+            if other in parts and other not in reached:
+                reached.add(other);todo.append((other,cost+1))
+    return [first]+sorted(reached-{first},key=lambda n:(parts[n].area,n))
+
+
+def measured_component_cuts(geometry,drc,profile,protected=(),seconds=15,maximum=7,states=24):
     """Search small actual component-boundary cuts while retaining target Cu.
 
     Graph passage is only candidate selection. Complete displaced-owner
@@ -496,7 +587,7 @@ def measured_component_cuts(geometry,drc,profile,protected=(),seconds=15,maximum
     from diagnose_routing_topology import model_scope,polygon_graph,boundary_attribution
     primitives={p['uuid']:p for p in geometry['tracks']+geometry['vias']}
     names={int(c):n['name'] for c,n in geometry['nets'].items()}
-    locked={p['net'] for p in primitives.values() if p.get('locked',True)}|{c for c,n in names.items() if n in protected}
+    locked={p['net'] for p in primitives.values() if p.get('locked',True) or p.get('arc')}|{c for c,n in names.items() if n in protected}
     counts=native_open_counts(geometry,drc);started=time.perf_counter();rows=[];selected=[]
     targets=deque(c for c in sorted(counts,key=lambda c:(sum(p['net']==c for p in geometry['pads']),c))
                   if counts[c] and c not in locked)
@@ -505,8 +596,12 @@ def measured_component_cuts(geometry,drc,profile,protected=(),seconds=15,maximum
         target=targets.popleft();queue=queues[target]
         while queue and queue[0] in seen[target]:queue.popleft()
         if not queue:continue
-        cut=queue.popleft();seen[target].add(cut);g=copy.deepcopy(geometry)
         targets.append(target)
+        cut=queue.popleft()
+        try:cut=frozenset(native_drill_cap_cuts(geometry,cut,{primitives[u]['net'] for u in cut},protected))
+        except ValueError:continue
+        if len(cut)>maximum or cut in seen[target]:continue
+        seen[target].add(cut);g=copy.deepcopy(geometry)
         for field in ('items','tracks','vias'):g[field]=[p for p in g[field] if p.get('uuid') not in cut]
         holes=Counter(tuple([*primitives[u]['at'],primitives[u]['drill_mm']/2]) for u in cut if 'at' in primitives[u])
         retained=[]
@@ -530,22 +625,42 @@ def measured_component_cuts(geometry,drc,profile,protected=(),seconds=15,maximum
         if not bad:
             if cut:
                 selected.append(row)
-                if len(selected)>=2:break
+                break
             continue
         if len(cut)>=maximum:continue
         parts={(l,j):p for l,d in zip(g['layers'],domains) for j,p in enumerate(shapely.get_parts(d))
             if p.geom_type=='Polygon' and p.area>1e-12}
-        contacts={tuple(n) for pair in bad for group in pair['groups'] for n in graph['terminal_contacts'][group]}
-        if not contacts:continue
-        node=min(contacts,key=lambda n:(parts[n].area,n))
-        boundary=boundary_attribution(parts[node],node[0],scope['items'],dict(spec,net=target),g)
-        row['boundary'].append({'node':node,'area_mm2':parts[node].area,**boundary})
-        paths,singles=boundary_cut_choices(boundary,primitives,g['layers'],locked,target,maximum-len(cut))
+        nodes=reachable_frontier_nodes(graph,bad,parts,via_budget)
+        if not nodes:continue
+        terminal=next(group for index,group in enumerate(groups) if nodes[0] in map(tuple,graph['terminal_contacts'][index]))
+        anchors=shapely.union_all([area for item in terminal for area in item['geometry'].values()])
+        boundary={'rows':[]}
+        for index,node in enumerate(nodes):
+            measured=boundary_attribution(parts[node],node[0],scope['items'],dict(spec,net=target),g)
+            row['boundary'].append({'node':node,'area_mm2':parts[node].area,**measured})
+            for item in measured['rows']:
+                copper=[primitives[p['uuid']] for p in item['native_primitives'] if p['uuid'] in primitives]
+                if not copper or anchors.is_empty:
+                    boundary['rows'].append(item);continue
+                distance=min((Point(p['at']) if 'at' in p else LineString([p['start'],p['end']])).distance(anchors) for p in copper)
+                boundary['rows'].append(dict(item,frontier_index=index,frontier_distance_mm=distance))
+        pads={(p['net'],int(layer),*point) for p in g['items'] if p.get('kind')=='pad'
+              for layer in p['shapes'] for point in p['terminals']}
+        paths,singles=boundary_cut_choices(boundary,primitives,g['layers'],locked,target,maximum-len(cut),pads)
         # A complete measured path is a useful next state even when its
         # individual segments cannot open the passage. Keep singleton
         # alternatives, and give another target its turn between states.
         queue.extendleft(reversed([cut|ids for ids in paths if ids-cut]))
-        queue.extend(cut|ids for ids in singles if ids-cut and len(cut|ids)<=maximum)
+        if not paths:
+            # Once no connected terminal-side path fits, inspect the walls
+            # reached through its legal layer transitions before old branches.
+            reached={'rows':[item for item in boundary['rows'] if item.get('frontier_index',0)>0]}
+            reached={'rows':[{k:v for k,v in item.items() if k not in ('frontier_index','frontier_distance_mm')}
+                for item in reached['rows']]}
+            _,walls=boundary_cut_choices(reached,primitives,g['layers'],locked,target,maximum-len(cut),pads)
+            choices=list(dict.fromkeys(walls+singles))
+            queue.extendleft(reversed([cut|ids for ids in choices if ids-cut and len(cut|ids)<=maximum]))
+        else:queue.extend(cut|ids for ids in singles if ids-cut and len(cut|ids)<=maximum)
     return {'target_copper_retained':True,'manual_trace_coordinates':False,'rows':rows,'selected':selected,
         'states_examined':len(rows),'elapsed_seconds':time.perf_counter()-started,
         'physical_infeasibility_claim':False}
@@ -563,7 +678,7 @@ def measured_owner_cluster(geometry,drc,profile,protected=(),maximum=5,seconds=1
     from diagnose_routing_topology import model_scope,polygon_graph,boundary_attribution
     names={int(c):n['name'] for c,n in geometry['nets'].items()}
     primitives=geometry['tracks']+geometry['vias']
-    locked={p['net'] for p in primitives if p.get('locked',True)}|{c for c,n in names.items() if n in protected}
+    locked={p['net'] for p in primitives if p.get('locked',True) or p.get('arc')}|{c for c,n in names.items() if n in protected}
     counts=native_open_counts(geometry,drc);started=time.perf_counter()
     def without(ids):
         g=copy.deepcopy(geometry);removed=[p for p in primitives if p['uuid'] in ids]
@@ -720,15 +835,19 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
     from optimize_kicad import unchanged_other_nets
     from joint_congestion_experiment import experiment
     from joint_route import route_joint
+    from native_restoration import NAME,copy_baseline,validate,audit as source_audit
+    from prune_native_routing import prune
     directory=Path(directory);start=time.perf_counter();branch=directory/'coupled-completion';branch.mkdir(exist_ok=False)
     source=directory/'candidate.kicad_pcb';source_hash=hashlib.sha256(source.read_bytes()).hexdigest()
     shutil.copy2(source,branch/'input-candidate.kicad_pcb')
-    for suffix in ('.kicad_pcb','.kicad_pro','.kicad_dru'):
+    suffixes=('.kicad_pcb','.kicad_pro','.kicad_dru','.dc.json','.routing.json')
+    for suffix in suffixes:
         if source.with_suffix(suffix).exists():shutil.copy2(source.with_suffix(suffix),branch/('candidate'+suffix))
+    if (directory/NAME).exists():copy_baseline(directory/NAME,branch/NAME)
     copy_assets(directory,branch);profile_path=branch/'profile.json';profile_path.write_text(json.dumps(profile,indent=2)+'\n')
     def remaining():return seconds-(time.perf_counter()-start)
     def run(args,d,label):
-        project={s:(d/('candidate'+s)).read_bytes() for s in ('.kicad_pro','.kicad_dru') if (d/('candidate'+s)).exists()}
+        project={s:(d/('candidate'+s)).read_bytes() for s in suffixes[1:] if (d/('candidate'+s)).exists()}
         try:
             with (d/(label+'.log')).open('w') as log:subprocess.run(list(map(str,args)),check=True,timeout=max(1,min(45,remaining())),stdout=log,stderr=subprocess.STDOUT)
         finally:
@@ -738,6 +857,37 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
     def check(d):
         run([kicad,'pcb','drc','--format','json','--severity-all','--all-track-errors','-o',d/'routed-drc.json',d/'candidate.kicad_pcb'],d,'native-drc')
         return json.loads((d/'routed-drc.json').read_text())
+    def contacts(d,label):
+        run(worker+['native-connectivity',d],d,label)
+        native=json.loads((d/'native-connectivity.json').read_text())
+        if (branch/NAME).exists() and native.get('source_sha256')!=hashlib.sha256((d/'candidate.kicad_pcb').read_bytes()).hexdigest():
+            raise ValueError('Native contacts belong to a different candidate')
+        return native
+    def inherit(d):
+        for suffix in suffixes:
+            if (branch/('candidate'+suffix)).exists():shutil.copy2(branch/('candidate'+suffix),d/('candidate'+suffix))
+        if (branch/NAME).exists():copy_baseline(branch/NAME,d/NAME)
+    def first_source(native):
+        if not (branch/NAME).exists():return {'pass':False,'reason':'Original native restoration baseline missing'}
+        validate(branch/NAME);return source_audit(branch/NAME,native,protected)
+    def preparation(d,before,ids,allowed):
+        if not (d/NAME).exists():raise ValueError('Measured completion requires original native contacts')
+        after=contacts(d,'prepared-native-connectivity')
+        gate=native_cut_preparation(before,after,ids,allowed)
+        inherited=first_source(after)
+        fields=('measured_cuts_valid','unselected_native_items_exact','allowed_additions_only',
+            'native_contacts_clean','physical_contact_schema_valid','surviving_contact_polygons_exact',
+            'declared_net_tie_contacts_exact','original_copper_edits_valid','empty_copper_inventory_exact')
+        gate['first_source_preparation']={key:inherited[key] for key in fields}
+        gate['pass'] &= all(inherited[key] for key in fields)
+        (d/'cut-preparation.json').write_text(json.dumps(gate,indent=2)+'\n')
+        if not gate['pass']:raise ValueError('Measured cut changed exact native survivors or original contacts')
+        return gate
+    def cleanup(d,row,allowed):
+        native=check(d)
+        if native.get('violations'):
+            row['pruning']=prune(d,worker,kicad,rounds=12,prefix='completed-tail-prune',protected=protected,profile=profile)
+        return check(d),inspect(d),contacts(d,'final-native-connectivity')
     report={'source_sha256':source_hash,'accepted':False,'complete':False,'joints':[],
         'component_cut_trials':[],'append_trials':[],'protected_nets':list(protected),'manual_trace_coordinates':False}
     changed=set()
@@ -748,8 +898,9 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
         (branch/'result.json').write_text(json.dumps(report,indent=2)+'\n')
     try:
         initial=inspect(branch);initial_drc=check(branch);initial_screen=screen(initial,profile);initial_counts=native_open_counts(initial,initial_drc)
-        run(worker+['native-connectivity',branch],branch,'source-native-connectivity')
-        original_contacts=json.loads((branch/'native-connectivity.json').read_text())
+        original_contacts=contacts(branch,'source-native-connectivity')
+        if (branch/NAME).exists() and not first_source(original_contacts)['pass']:
+            raise ValueError('Input changed original native restoration obligations')
         final,final_drc,final_counts=initial,initial_drc,initial_counts
         (branch/'source-geometry.json').write_text(json.dumps(initial));(branch/'source-drc.json').write_text(json.dumps(initial_drc,indent=2))
         diagnosis=measured_component_cuts(initial,initial_drc,profile,protected,seconds=max(0,min(15,remaining()-15)))
@@ -760,8 +911,7 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
                 for owner_order in orders:
                     if remaining()<15:break
                     d=branch/f'component-cut-{len(report["component_cut_trials"]):02d}';d.mkdir();copy_assets(branch,d)
-                    for suffix in ('.kicad_pcb','.kicad_pro','.kicad_dru'):
-                        if (branch/('candidate'+suffix)).exists():shutil.copy2(branch/('candidate'+suffix),d/('candidate'+suffix))
+                    inherit(d)
                     row={'target':selection['target_name'],'cut_native_uuids':selection['removed_native_uuids'],
                         'owner_order':list(owner_order),'target_copper_retained':True,'accepted':False,'stages':[]}
                     report['component_cut_trials'].append(row)
@@ -770,10 +920,11 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
                         cut={'tracks':[],'vias':[],'remove':selection['removed_native_uuids']}
                         cut['preserve_functional_fills']=True
                         (d/'grid-route.json').write_text(json.dumps(cut));run(worker+['apply-grid',d],d,'cut')
+                        row['preparation']=preparation(d,original_contacts,selection['removed_native_uuids'],allowed)
                         coordinated=None
                         if owner_order==tuple(owners) and remaining()>25:
                             g=inspect(d)
-                            coordinated=route_joint(g,[selection['target'],*owners],seconds=max(1,min(60,remaining()-20)))
+                            coordinated=route_joint(g,[selection['target'],*owners],seconds=max(1,min(60,remaining()-20)),ordinary_first=True)
                             coordinated['preserve_functional_fills']=True
                             (d/'joint-route.json').write_text(json.dumps(coordinated,indent=2)+'\n')
                             row['coordinated']={k:v for k,v in coordinated.items()if k not in ('tracks','vias','joint_trials')}
@@ -791,22 +942,23 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
                             if proposal['tracks'] or proposal['vias']:
                                 (d/'grid-route.json').write_text(json.dumps(proposal));run(worker+['apply-grid',d],d,f'append-{net}')
                         if not(coordinated and coordinated['complete_cluster']) and (len(row['stages'])!=1+len(owners) or any(s['failed'] for s in row['stages'])):continue
-                        after_drc=check(d);after=inspect(d)
-                        run(worker+['native-connectivity',d],d,'final-native-connectivity')
-                        contacts=json.loads((d/'native-connectivity.json').read_text())
-                        partition=native_partition_preservation(original_contacts,contacts,selection['removed_native_uuids'],allowed)
+                        after_drc,after,after_contacts=cleanup(d,row,allowed)
+                        cuts=sorted(set(original_contacts['native_items'])-set(after_contacts['native_items']))
+                        partition=native_partition_preservation(original_contacts,after_contacts,cuts,changed|allowed)
+                        restoration=first_source(after_contacts)
                         preserve=audit_preservation(source,d/'candidate.kicad_pcb')
                         plane=plane_partitions_preserved(initial,after,sorted({z['net'] for z in initial.get('zones',[]) if z['net'] and not z.get('teardrop')}),[])
                         after_counts=native_open_counts(after,after_drc)
                         project_exact=all((branch/('candidate'+s)).read_bytes()==(d/('candidate'+s)).read_bytes()
-                            for s in ('.kicad_pro','.kicad_dru') if (branch/('candidate'+s)).exists())
+                            for s in suffixes[1:] if (branch/('candidate'+s)).exists())
                         row.update(native_partitions=partition,source_preservation=preserve,plane_partitions=plane,
+                            first_source_restoration=restoration,removed_original_copper_uuids=cuts,
                             project_exact=project_exact,profile_nonregression=nonregression(initial_screen,screen(after,profile)),
                             no_new_native_findings=no_new_native_findings(initial_drc,after_drc),
                             no_displaced_open_regression=all(after_counts.get(c,0)<=n for c,n in initial_counts.items()),
                             foreign_copper=unchanged_other_nets(source,d/'candidate.kicad_pcb',allowed),
                             after=summarize_drc(d/'routed-drc.json'))
-                        row['accepted']=all((partition['pass'],preserve['pass'],plane['pass'],project_exact,
+                        row['accepted']=all((partition['pass'],restoration['pass'],preserve['pass'],plane['pass'],project_exact,
                             row['profile_nonregression'],row['no_new_native_findings'],row['no_displaced_open_regression'],
                             row['foreign_copper'],len(after_drc['unconnected_items'])<len(initial_drc['unconnected_items'])))
                         if row['accepted']:
@@ -836,34 +988,38 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
             if selection is not None and remaining()>25:
                 selection_path=branch/f'selection-{iteration:02d}.json';selection_path.write_text(json.dumps(selection,indent=2)+'\n')
                 d=branch/f'coordinated-rebuild-{iteration:02d}';d.mkdir();copy_assets(branch,d)
-                for suffix in ('.kicad_pcb','.kicad_pro','.kicad_dru'):
-                    if (branch/('candidate'+suffix)).exists():shutil.copy2(branch/('candidate'+suffix),d/('candidate'+suffix))
+                inherit(d)
                 codes={int(c)for c,n in current['nets'].items()if n['name']in selection['selected_nets']}
                 cut_ids=measured_owner_cut(current,selection,current_hash,protected)
                 joint_row={'target':selection['target'],'selected_nets':selection['selected_nets'],'removed_native_uuids':cut_ids,
                     'unpeeled_owner_copper_retained':True,'accepted':False}
                 report.setdefault('coordinated_trials',[]).append(joint_row)
                 try:
+                    current_contacts=contacts(branch,'current-native-connectivity')
                     (d/'grid-route.json').write_text(json.dumps({'tracks':[],'vias':[],'remove':cut_ids,'preserve_functional_fills':True}))
                     run(worker+['apply-grid',d],d,'cut');g=inspect(d)
-                    proposal=route_joint(g,sorted(codes),seconds=max(1,min(60,remaining()-20)))
+                    joint_row['preparation']=preparation(d,current_contacts,cut_ids,set(selection['selected_nets']))
+                    proposal=route_joint(g,sorted(codes),seconds=max(1,min(60,remaining()-20)),ordinary_first=True)
                     proposal['preserve_functional_fills']=True
                     (d/'joint-route.json').write_text(json.dumps(proposal,indent=2)+'\n')
                     joint_row['search']={k:v for k,v in proposal.items()if k not in ('tracks','vias','joint_trials')}
                     if proposal['complete_cluster']:
                         (d/'grid-route.json').write_text(json.dumps(proposal));run(worker+['apply-grid',d],d,'apply')
-                        after_drc=check(d);after=inspect(d);run(worker+['native-connectivity',d],d,'final-native-connectivity')
-                        contacts=json.loads((d/'native-connectivity.json').read_text())
-                        cuts=sorted(set(original_contacts['native_items'])-set(contacts['native_items']))
-                        partition=native_partition_preservation(original_contacts,contacts,cuts,changed|set(selection['selected_nets']))
+                        after_drc,after,after_contacts=cleanup(d,joint_row,selection['selected_nets'])
+                        cuts=sorted(set(original_contacts['native_items'])-set(after_contacts['native_items']))
+                        partition=native_partition_preservation(original_contacts,after_contacts,cuts,changed|set(selection['selected_nets']))
+                        restoration=first_source(after_contacts)
                         counts=native_open_counts(after,after_drc)
                         preserve=audit_preservation(source,d/'candidate.kicad_pcb')
                         foreign=unchanged_other_nets(branch/'candidate.kicad_pcb',d/'candidate.kicad_pcb',selection['selected_nets'])
+                        project_exact=all((branch/('candidate'+s)).read_bytes()==(d/('candidate'+s)).read_bytes()
+                            for s in suffixes[1:] if (branch/('candidate'+s)).exists())
                         joint_row.update(native_partitions=partition,source_preservation=preserve,foreign_copper=foreign,
+                            first_source_restoration=restoration,removed_original_copper_uuids=cuts,project_exact=project_exact,
                             profile_nonregression=nonregression(initial_screen,screen(after,profile)),
                             no_new_native_findings=no_new_native_findings(initial_drc,after_drc),
                             selected_native_closed=all(counts.get(c,0)==0 for c in codes))
-                        joint_row['accepted']=all((partition['pass'],preserve['pass'],foreign,joint_row['profile_nonregression'],joint_row['no_new_native_findings'],joint_row['selected_native_closed'],len(after_drc['unconnected_items'])<len(native['unconnected_items'])))
+                        joint_row['accepted']=all((partition['pass'],restoration['pass'],preserve['pass'],foreign,project_exact,joint_row['profile_nonregression'],joint_row['no_new_native_findings'],joint_row['selected_native_closed'],len(after_drc['unconnected_items'])<len(native['unconnected_items'])))
                         if joint_row['accepted']:
                             shutil.copy2(d/'candidate.kicad_pcb',branch/'candidate.kicad_pcb');changed.update(selection['selected_nets'])
                             final,final_drc,final_counts=after,after_drc,counts
@@ -878,7 +1034,7 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
                     candidate_drc=json.loads((joint/'routed-drc.json').read_text())
                     # An unfinished joint draft can continue privately, but it
                     # cannot bypass fixed physical/source/profile safeguards.
-                    physical=(result['foreign_copper']['pass'] and result['preservation']['pass'] and result['project_exact'] and result['routing_nonregression'] and no_new_native_findings(native,candidate_drc))
+                    physical=(result.get('selected_complete') is True and result['foreign_copper']['pass'] and result['preservation']['pass'] and result['project_exact'] and result['routing_nonregression'] and no_new_native_findings(native,candidate_drc))
                     if physical:
                         shutil.copy2(joint/'candidate.kicad_pcb',branch/'candidate.kicad_pcb');changed.update(selection['selected_nets'])
             tried=set()
@@ -889,8 +1045,7 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
                 if not options:break
                 target=min(options,key=lambda c:(sum(p['net']==c for p in g['pads']),c));tried.add(target)
                 d=branch/f'append-{len(report["append_trials"]):02d}';d.mkdir();copy_assets(branch,d)
-                for suffix in ('.kicad_pcb','.kicad_pro','.kicad_dru'):
-                    if (branch/('candidate'+suffix)).exists():shutil.copy2(branch/('candidate'+suffix),d/('candidate'+suffix))
+                inherit(d)
                 row={'net':names[target],'accepted':False,'source_sha256':hashlib.sha256((branch/'candidate.kicad_pcb').read_bytes()).hexdigest()}
                 try:
                     proposal=route(g,step=.025,seconds=max(1,min(30,remaining()-15)),only_nets=[target],continuous=True)
@@ -913,16 +1068,16 @@ def coupled_completion(directory,worker,kicad,profile,seconds=240,protected=()):
         final_screen=screen(final,profile)
         preserve=audit_preservation(source,branch/'candidate.kicad_pcb');foreign=unchanged_other_nets(source,branch/'candidate.kicad_pcb',changed)
         planes=sorted({z['net'] for z in initial.get('zones',[]) if z['net'] and not z.get('teardrop')});partition=plane_partitions_preserved(initial,final,planes,[])
-        project_exact=all(source.with_suffix(s).read_bytes()==(branch/('candidate'+s)).read_bytes() for s in ('.kicad_pro','.kicad_dru') if source.with_suffix(s).exists())
+        project_exact=all(source.with_suffix(s).read_bytes()==(branch/('candidate'+s)).read_bytes() for s in suffixes[1:] if source.with_suffix(s).exists())
         no_displaced_regression=all(final_counts.get(c,0)<=count for c,count in initial_counts.items())
-        run(worker+['native-connectivity',branch],branch,'final-native-connectivity')
-        final_contacts=json.loads((branch/'native-connectivity.json').read_text())
+        final_contacts=contacts(branch,'final-native-connectivity')
         all_cuts=sorted(set(original_contacts['native_items'])-set(final_contacts['native_items']))
         source_partition=native_partition_preservation(original_contacts,final_contacts,all_cuts,changed)
         report['native_partitions']=source_partition
+        report['first_source_restoration']=first_source(final_contacts)
         report['removed_original_copper_uuids']=all_cuts
         report.update(final=summarize_drc(branch/'routed-drc.json'),source_preservation=preserve,foreign_copper=foreign,plane_partitions=partition,profile_pass=final_screen['pass'],profile_nonregression=nonregression(initial_screen,final_screen),project_exact=project_exact,no_new_native_findings=no_new_native_findings(initial_drc,final_drc),no_displaced_open_regression=no_displaced_regression,changed_nets=sorted(changed),source_unchanged=hashlib.sha256(source.read_bytes()).hexdigest()==source_hash)
-        report['accepted']=source_partition['pass'] and preserve['pass'] and foreign and partition['pass'] and project_exact and report['profile_nonregression'] and report['no_new_native_findings'] and no_displaced_regression and report['source_unchanged'] and len(final_drc['unconnected_items'])<len(initial_drc['unconnected_items'])
+        report['accepted']=source_partition['pass'] and report['first_source_restoration']['pass'] and preserve['pass'] and foreign and partition['pass'] and project_exact and report['profile_nonregression'] and report['no_new_native_findings'] and no_displaced_regression and report['source_unchanged'] and len(final_drc['unconnected_items'])<len(initial_drc['unconnected_items'])
         report['complete']=report['accepted'] and not final_drc['unconnected_items'] and final_screen['pass']
         (branch/'routing-screen.json').write_text(json.dumps(final_screen,indent=2)+'\n')
         if report['accepted']:

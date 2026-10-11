@@ -1,3 +1,28 @@
+# v0.1.0-alpha.2
+
+Automatic native **Finish** now discovers bounded cuts in obstructing copper
+and restores the affected nets together. It includes the completion work for
+`RGB_DATA` and `I2C_SCL` on the retained original CORE03 native Pico upload,
+without a prepared cut-board input or manual trace coordinates.
+
+The acceptance gates preserve the first source's complete contact obligations,
+exact surviving copper, matching project/profile bytes, protected copper and
+supplied routing limits. An incomplete selected cluster cannot be accepted as
+a completed restoration. The release's `VERIFICATION.json` binds the exact
+original upload, ordinary application result and clean-install replay to the
+released source; it records the executed native/source/profile/export checks.
+`SOURCE-MANIFEST.sha256` and `SHA256SUMS` identify the published files.
+
+This is native partial-board completion for the recorded input. It does not
+establish cold routing of the built-in Pico model, universal routing success,
+physical operation or manufacturing release. The development upload, private
+experiments and preselected manufacturing archives are not bundled. Licensing
+and the external stock Freerouting/KiCad tool policy remain unchanged.
+
+See [Quickstart](QUICKSTART.md), [Limitations](LIMITATIONS.md) and
+[Testing](TESTING.md). The alpha 1 notes below retain the earlier release's
+scope and incomplete Pico status.
+
 # v0.1.0-alpha.1
 
 First public source alpha of the local Netlist Shatter PCB workbench.

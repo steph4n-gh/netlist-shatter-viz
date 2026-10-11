@@ -422,7 +422,7 @@ def solve(source, out, timeout=180, passes=30, kicad=None, mode="route", protect
             # searches. Only the controller's final guarded candidate is adopted.
             from repair_native_congestion import coupled_completion
             save(stage='Completing measured routing obstructions under original board rules')
-            result['coupled_completion']=coupled_completion(out,worker,kicad,repair_profile,min(timeout*2,240),protected)
+            result['coupled_completion']=coupled_completion(out,worker,kicad,repair_profile,min(timeout*2,360),protected)
             result['routed_drc']=summarize_drc(out/'routed-drc.json')
             if result['coupled_completion']['accepted']:
                 result['selected_router']+=' + coupled-completion'

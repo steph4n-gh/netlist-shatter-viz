@@ -15,6 +15,14 @@ from grid_route import shape
 import prune_native_routing
 from shapely.geometry import LineString
 from test_grid_route import fixture,rectangle
+from native_restoration import NAME,snapshot,bind_contacts,sha,validate
+
+
+def first_source(directory):
+    snapshot(directory/'candidate.kicad_pcb',directory/NAME)
+    native={'source_sha256':sha(directory/NAME/'candidate.kicad_pcb'),
+        'contact_schema':'physical-Cu-islands/1','contact_graph_unambiguous':True}
+    (directory/NAME/'native-connectivity.json').write_text(json.dumps(native));bind_contacts(directory/NAME)
 
 
 def board(points,at,drill=.3):
@@ -94,7 +102,7 @@ class DanglingViaConsolidationTests(unittest.TestCase):
                 changed='(kicad_pcb (segment (net "signal") (uuid "replacement")))'
                 (d/'candidate.kicad_pcb').write_text(original)
                 project=b'{"rules":"exact"}\n';(d/'candidate.kicad_pro').write_bytes(project)
-                (d/'restoration-source').mkdir()
+                first_source(d)
                 before={'violations':[{'type':'via_dangling','severity':'warning','items':[{'uuid':'via'}]}],
                         'unconnected_items':[]}
                 (d/'routed-drc.json').write_text(json.dumps(before))
@@ -122,13 +130,78 @@ class DanglingViaConsolidationTests(unittest.TestCase):
                     (trial/'candidate.kicad_pro').write_bytes(b'{"migrated":true}')
                     return SimpleNamespace(returncode=0)
                 with patch.object(prune_native_routing.subprocess,'run',side_effect=native),\
-                     patch('native_restoration.validate',return_value={}),\
                      patch('native_restoration.audit',return_value={'pass':source_pass,'required':2,'restored':2 if source_pass else 1}):
                     trials=prune_native_routing.prune(d,['native'],'kicad')
                 self.assertEqual(trials[0]['accepted'],source_pass)
                 self.assertEqual((d/'candidate.kicad_pcb').read_text(),changed if source_pass else original)
                 self.assertEqual((d/'candidate.kicad_pro').read_bytes(),project)
                 self.assertEqual((d/'prune-00-via-consolidation/candidate.kicad_pro').read_bytes(),project)
+
+    def test_second_dangling_via_cleanup_inherits_the_same_immutable_first_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d=Path(tmp)
+            def native_board(uids):
+                return '(kicad_pcb '+''.join('('+('via' if uid.startswith('via') else 'segment')+
+                    ' (net "signal") (uuid "'+uid+'"))' for uid in uids)+')'
+            states={'original':['t0','t1','via','t2','t3','via2'],
+                'one':['new1','t2','t3','via2'],'two':['new1','new2']}
+            boards={state:native_board(uids) for state,uids in states.items()}
+            (d/'candidate.kicad_pcb').write_text(boards['original'])
+            project=b'{"rules":"exact"}\n';(d/'candidate.kicad_pro').write_bytes(project)
+            first_source(d);original_manifest=validate(d/NAME)
+            before={'violations':[{'type':'via_dangling','severity':'warning','items':[{'uuid':'via'}]}],
+                'unconnected_items':[]}
+            (d/'routed-drc.json').write_text(json.dumps(before))
+            data=board([[5.8,5],[6,5],[6.2,5]],[6,5]);data['zones']=[]
+            data['layer_names']={'0':'F.Cu','2':'B.Cu'}
+            data['tracks'].extend([dict(data['tracks'][i],uuid='t'+str(i+2),
+                start=[v+2 if j==0 else v for j,v in enumerate(data['tracks'][i]['start'])],
+                end=[v+2 if j==0 else v for j,v in enumerate(data['tracks'][i]['end'])])for i in range(2)])
+            data['vias'].append(dict(data['vias'][0],uuid='via2',at=[8,5]))
+            audits=[]
+            def native(command,**kwargs):
+                command=list(map(str,command))
+                trial=Path(command[-1]).parent if command[1]=='pcb' else Path(command[2])
+                state=next(s for s,value in boards.items() if (trial/'candidate.kicad_pcb').read_text()==value)
+                self.assertEqual((trial/'candidate.kicad_pro').read_bytes(),project)
+                if command[1]=='pcb':
+                    warning='via' if state=='original' else 'via2' if state=='one' else None
+                    report={'violations':[] if warning is None else [{'type':'via_dangling','severity':'warning','items':[{'uuid':warning}]}],
+                        'unconnected_items':[]}
+                    Path(command[command.index('-o')+1]).write_text(json.dumps(report))
+                elif command[1]=='dc-geometry':
+                    geometry=copy.deepcopy(data)
+                    geometry['tracks']=[t for t in geometry['tracks'] if t['uuid'] in states[state]]
+                    geometry['vias']=[v for v in geometry['vias'] if v['uuid'] in states[state]]
+                    geometry['source_board_sha256']=sha(trial/'candidate.kicad_pcb')
+                    (trial/'dc-geometry.json').write_text(json.dumps(geometry))
+                elif command[1]=='apply-grid':
+                    plan=json.loads((trial/'grid-route.json').read_text())
+                    if state=='original':self.assertEqual(set(plan['remove']),{'via','t0','t1'})
+                    else:self.assertEqual(set(plan['remove']),{'via2','t2','t3'})
+                    (trial/'candidate.kicad_pcb').write_text(boards['one' if state=='original' else 'two'])
+                elif command[1]=='native-connectivity':
+                    (trial/'native-connectivity.json').write_text(json.dumps({'source_sha256':sha(trial/'candidate.kicad_pcb')}))
+                else:raise AssertionError('Unexpected native mode '+command[1])
+                (trial/'candidate.kicad_pro').write_bytes(b'{"migrated":true}')
+                return SimpleNamespace(returncode=0)
+            def audit(baseline,contacts,protected):
+                self.assertEqual(validate(baseline),original_manifest)
+                self.assertEqual((Path(baseline)/'candidate.kicad_pcb').read_text(),boards['original'])
+                audits.append(Path(baseline));return {'pass':True,'required':2,'restored':2}
+            with patch.object(prune_native_routing.subprocess,'run',side_effect=native),patch('native_restoration.audit',side_effect=audit):
+                trials=prune_native_routing.prune(d,['native'],'kicad',rounds=12)
+            self.assertTrue(trials[0]['accepted'],trials)
+            nested=trials[0]['tail_prune'][0]
+            self.assertTrue(nested['accepted'],nested)
+            self.assertEqual((d/'candidate.kicad_pcb').read_text(),boards['two'])
+            self.assertEqual(json.loads((d/'routed-drc.json').read_text())['violations'],[])
+            self.assertEqual((d/'candidate.kicad_pro').read_bytes(),project)
+            child=d/'prune-00-via-consolidation'
+            grandchild=child/'tail-prune-00-via-consolidation'
+            self.assertEqual(validate(child/NAME),original_manifest)
+            self.assertEqual(validate(grandchild/NAME),original_manifest)
+            self.assertEqual(set(audits),{d/NAME,child/NAME})
 
 
 if __name__=='__main__':unittest.main()

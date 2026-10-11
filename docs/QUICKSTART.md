@@ -29,7 +29,7 @@ Clone the tagged source, or unpack the release source archive and enter its
 directory:
 
 ```sh
-git clone --branch v0.1.0-alpha.1 --depth 1 https://github.com/steph4n-gh/netlist-shatter-viz.git
+git clone --branch v0.1.0-alpha.2 --depth 1 https://github.com/steph4n-gh/netlist-shatter-viz.git
 cd netlist-shatter-viz
 ./scripts/install-alpha.sh
 .venv/bin/python scripts/doctor.py --require-routing
@@ -80,10 +80,15 @@ plus `fp-lib-table` and the referenced local footprint libraries. Library URIs
 must use `${KIPRJMOD}/` paths within the project. Keep upstream license and notice
 files. Upload size and file limits are displayed beside the file picker.
 
-**Finish** attempts open-connection repair. **Improve** retains the original as
+**Finish** attempts open-connection repair, including bounded discovery of
+obstructing copper and coordinated restoration of the affected nets. Upload the
+original partial board with its matching project and profiles; no prepared cuts
+or manual trace coordinates are required. **Improve** retains the original as
 fallback and accepts only changes satisfying its measured nonregression checks.
 List protected nets for critical copper and read the result's findings. Missing
-external libraries and source-rule violations remain visible.
+external libraries and source-rule violations remain visible. The release's
+native Pico completion scope concerns the exact original upload identified in
+`VERIFICATION.json`; the built-in Design model is a separate input.
 
 ## Troubleshooting
 
