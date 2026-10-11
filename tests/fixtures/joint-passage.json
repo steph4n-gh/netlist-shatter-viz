@@ -1,0 +1,258 @@
+{
+  "layers": [
+    0,
+    2
+  ],
+  "layer_names": {
+    "0": "F.Cu",
+    "2": "B.Cu"
+  },
+  "outline": [
+    {
+      "shell": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          4.65
+        ],
+        [
+          8,
+          4.65
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          5.35
+        ],
+        [
+          4,
+          5.35
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "holes": []
+    }
+  ],
+  "items": [
+    {
+      "net": 1,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          2,
+          5
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                1.8,
+                4.8
+              ],
+              [
+                2.2,
+                4.8
+              ],
+              [
+                2.2,
+                5.2
+              ],
+              [
+                1.8,
+                5.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    },
+    {
+      "net": 1,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          10,
+          5
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                9.8,
+                4.8
+              ],
+              [
+                10.2,
+                4.8
+              ],
+              [
+                10.2,
+                5.2
+              ],
+              [
+                9.8,
+                5.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    },
+    {
+      "net": 2,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          2,
+          3
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                1.8,
+                2.8
+              ],
+              [
+                2.2,
+                2.8
+              ],
+              [
+                2.2,
+                3.2
+              ],
+              [
+                1.8,
+                3.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    },
+    {
+      "net": 2,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          10,
+          3
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                9.8,
+                2.8
+              ],
+              [
+                10.2,
+                2.8
+              ],
+              [
+                10.2,
+                3.2
+              ],
+              [
+                9.8,
+                3.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    }
+  ],
+  "holes": [],
+  "keepouts": [],
+  "tracks": [],
+  "vias": [],
+  "edge_clearance": 0.05,
+  "hole_clearance": 0.15,
+  "hole_to_hole": 0.15,
+  "nets": {
+    "1": {
+      "name": "signal-1",
+      "width": 0.15,
+      "clearance": 0.15,
+      "via_diameter": 0.6,
+      "via_drill": 0.3
+    },
+    "2": {
+      "name": "signal-2",
+      "width": 0.15,
+      "clearance": 0.15,
+      "via_diameter": 0.6,
+      "via_drill": 0.3
+    }
+  },
+  "routing_profile": {
+    "net_limits": [
+      {
+        "net": "signal-1",
+        "min_width_mm": 0.15,
+        "allowed_layers": [
+          "F.Cu"
+        ],
+        "max_vias": 0
+      },
+      {
+        "net": "signal-2",
+        "min_width_mm": 0.15,
+        "allowed_layers": [
+          "F.Cu"
+        ],
+        "max_vias": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "board": {
+    "width": 60.0,
+    "height": 42.0,
+    "layers": 2,
+    "thickness": 1.6
+  },
+  "components": [
+    {
+      "reference": "J1",
+      "value": "USB4105-GF-A",
+      "footprint": "(footprint \"part-0\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(descr \"USB 2.0 Type C Receptacle, GCT, 16P, top mounted, horizontal, 5A: https://gct.co/files/drawings/usb4105.pdf\")\n\t(tags \"USB C Type-C Receptacle SMD USB 2.0 16P 16C USB4105-15-A USB4105-15-A-060 USB4105-15-A-120 USB4105-GF-A USB4105-GF-A-060 USB4105-GF-A-120\")\n\t(property \"Reference\" \"J1\"\n\t\t(at 0 -5.5 0)\n\t\t(unlocked yes)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"aa3bc145-01f3-4060-96ab-6243473ea119\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"USB4105-GF-A\"\n\t\t(at 0 5 0)\n\t\t(unlocked yes)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"8815acf5-b7f6-440e-8944-59e20fee66c0\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(unlocked yes)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"f4b617c0-b58a-4576-9227-67dd23e15a05\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(unlocked yes)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"38411e80-84d7-47bd-9095-34e6083f04bf\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(attr smd)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start -4.67 -0.1)\n\t\t(end -4.67 -1.8)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"f584ecc2-2c31-480b-9383-7693767b4550\")\n\t)\n\t(fp_line\n\t\t(start 4.67 -0.1)\n\t\t(end 4.67 -1.8)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"0b579b02-cebc-4d8e-8026-98923c547b5e\")\n\t)\n\t(fp_line\n\t\t(start 5 3.675)\n\t\t(end -5 3.675)\n\t\t(stroke\n\t\t\t(width 0.1)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"Dwgs.User\")\n\t\t(uuid \"216acaf4-b698-49cf-80b2-d0cd524d7aa6\")\n\t)\n\t(fp_rect\n\t\t(start -5.32 -4.76)\n\t\t(end 5.32 4.18)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type solid)\n\t\t)\n\t\t(fill no)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"57c04900-51d2-42a4-a2c7-c17e9bfed312\")\n\t)\n\t(fp_rect\n\t\t(start -4.47 -3.675)\n\t\t(end 4.47 3.675)\n\t\t(stroke\n\t\t\t(width 0.1)\n\t\t\t(type solid)\n\t\t)\n\t\t(fill no)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"21349702-1bdf-4aaa-9e16-7353d69edcc1\")\n\t)\n\t(fp_text user \"PCB Edge\"\n\t\t(at 0 3.1 0)\n\t\t(unlocked yes)\n\t\t(layer \"Dwgs.User\")\n\t\t(uuid \"51aa7fb8-3078-420b-99b0-cd96c6744d50\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 0.5 0.5)\n\t\t\t\t(thickness 0.1)\n\t\t\t)\n\t\t)\n\t)\n\t(fp_text user \"${REFERENCE}\"\n\t\t(at 0 0 0)\n\t\t(unlocked yes)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"995f2251-1fd4-42c0-9022-c642e7add9e5\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(pad \"\" np_thru_hole circle\n\t\t(at -2.89 -2.605)\n\t\t(size 0.65 0.65)\n\t\t(drill 0.65)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(uuid \"b9758e1d-ccc4-4639-b852-d2803f58d74e\")\n\t)\n\t(pad \"\" np_thru_hole circle\n\t\t(at 2.89 -2.605)\n\t\t(size 0.65 0.65)\n\t\t(drill 0.65)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(uuid \"7a0aeb36-6e67-4a80-9a2c-47b8e0db8bc4\")\n\t)\n\t(pad \"A1\" smd roundrect\n\t\t(at -3.2 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"58596453-006c-4ab8-9a8e-02ec72c95bd0\")\n\t)\n\t(pad \"A4\" smd roundrect\n\t\t(at -2.4 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"ce121524-a7c9-463c-95d7-60f9bc38cd0d\")\n\t)\n\t(pad \"A5\" smd roundrect\n\t\t(at -1.25 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"175fc98a-16ec-40f5-ae27-0a2e062f8744\")\n\t)\n\t(pad \"A6\" smd roundrect\n\t\t(at -0.25 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"e1b7d6f1-16c1-4158-ae94-b5236ce1d822\")\n\t)\n\t(pad \"A7\" smd roundrect\n\t\t(at 0.25 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"bc407d1b-cfab-4163-a517-75bf06cbb61b\")\n\t)\n\t(pad \"A8\" smd roundrect\n\t\t(at 1.25 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"14c8b35f-b304-4d00-8ee2-7b341c9e3761\")\n\t)\n\t(pad \"A9\" smd roundrect\n\t\t(at 2.4 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"4f68050b-4451-4642-bb14-6bd0339c6ac6\")\n\t)\n\t(pad \"A12\" smd roundrect\n\t\t(at 3.2 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"daca7aa0-b119-4667-8739-fe215e7241e3\")\n\t)\n\t(pad \"B1\" smd roundrect\n\t\t(at 3.2 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"bb8d0e8a-a875-44db-9ed2-fd465331d93e\")\n\t)\n\t(pad \"B4\" smd roundrect\n\t\t(at 2.4 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"2138403a-84cf-4aec-9dd0-adb930adcbcd\")\n\t)\n\t(pad \"B5\" smd roundrect\n\t\t(at 1.75 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"ecd44cfe-7052-4f80-a082-42dee93e978d\")\n\t)\n\t(pad \"B6\" smd roundrect\n\t\t(at 0.75 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"7b8888bc-0ecf-4aea-b98f-c7d1bff2ede1\")\n\t)\n\t(pad \"B7\" smd roundrect\n\t\t(at -0.75 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"53a02757-10d8-4260-9a81-910fd130b9c2\")\n\t)\n\t(pad \"B8\" smd roundrect\n\t\t(at -1.75 -3.68)\n\t\t(size 0.3 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"b82b6321-6fd2-486d-9352-24fc8611af6c\")\n\t)\n\t(pad \"B9\" smd roundrect\n\t\t(at -2.4 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"c28949de-ba7c-4750-938f-eccb215ed0c7\")\n\t)\n\t(pad \"B12\" smd roundrect\n\t\t(at -3.2 -3.68)\n\t\t(size 0.6 1.15)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(uuid \"ccda9b52-e8e8-4b34-bd0f-caa9f26e9920\")\n\t)\n\t(pad \"SH\" thru_hole oval\n\t\t(at -4.32 -3.105)\n\t\t(size 1 2.1)\n\t\t(drill oval 0.6 1.7)\n\t\t(property pad_prop_mechanical)\n\t\t(layers \"*.Cu\" \"*.Mask\" \"F.Paste\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"2563438d-31f6-42e7-abb9-a56848b16ada\")\n\t)\n\t(pad \"SH\" thru_hole oval\n\t\t(at -4.32 1.075)\n\t\t(size 1 1.8)\n\t\t(drill oval 0.6 1.4)\n\t\t(property pad_prop_mechanical)\n\t\t(layers \"*.Cu\" \"*.Mask\" \"F.Paste\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"66e0bf4b-b54f-4844-8b1b-83e85519d41f\")\n\t)\n\t(pad \"SH\" thru_hole oval\n\t\t(at 4.32 -3.105)\n\t\t(size 1 2.1)\n\t\t(drill oval 0.6 1.7)\n\t\t(property pad_prop_mechanical)\n\t\t(layers \"*.Cu\" \"*.Mask\" \"F.Paste\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"2d180aaa-3288-47a9-8e08-d7b62edec273\")\n\t)\n\t(pad \"SH\" thru_hole oval\n\t\t(at 4.32 1.075)\n\t\t(size 1 1.8)\n\t\t(drill oval 0.6 1.4)\n\t\t(property pad_prop_mechanical)\n\t\t(layers \"*.Cu\" \"*.Mask\" \"F.Paste\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"0ae7b10d-e263-4ad0-92bb-67b8b0b4a16a\")\n\t)\n\t(embedded_fonts no)\n\t(model \"${KICAD10_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step\"\n\t\t(offset\n\t\t\t(xyz 0 0 0)\n\t\t)\n\t\t(scale\n\t\t\t(xyz 1 1 1)\n\t\t)\n\t\t(rotate\n\t\t\t(xyz 0 0 0)\n\t\t)\n\t)\n)\n",
+      "nets": {
+        "A1": "GND",
+        "A4": "5V_VBUS",
+        "A5": "CC1",
+        "A6": "USB_CONN_DP",
+        "A7": "USB_CONN_DM",
+        "A8": null,
+        "A9": "5V_VBUS",
+        "A12": "GND",
+        "B1": "GND",
+        "B4": "5V_VBUS",
+        "B5": "CC2",
+        "B6": "USB_CONN_DP",
+        "B7": "USB_CONN_DM",
+        "B8": null,
+        "B9": "5V_VBUS",
+        "B12": "GND",
+        "SH": "GND"
+      },
+      "position": [
+        8.0,
+        3.675
+      ],
+      "rotation": 180.0
+    },
+    {
+      "reference": "U1",
+      "value": "RP2040",
+      "footprint": "(footprint \"part-1\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"U1\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"9bc14879-6f3d-4cb9-8a21-eea60b419db4\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"RP2040\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"ace99892-fd13-4e16-ad1e-aa2a3377e293\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"be910135-e071-488e-81da-a322f838aeef\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"d996e094-9afc-4770-8383-b8798d945958\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -3.45 -2.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"cadc3693-654f-4bbc-bede-ef6118dfae49\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at -3.45 -2.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"fbd4fa6f-1646-44d1-abea-a8b79f02e194\")\n\t)\n\t(pad \"3\" smd rect\n\t\t(at -3.45 -1.8)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"61a17a87-5f07-437b-a88d-9fae59c8f330\")\n\t)\n\t(pad \"4\" smd rect\n\t\t(at -3.45 -1.4)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"1cc91b36-ec91-49c0-acf0-05861660b0f8\")\n\t)\n\t(pad \"5\" smd rect\n\t\t(at -3.45 -1)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"1e5070fa-80e0-4699-a371-1544930786de\")\n\t)\n\t(pad \"6\" smd rect\n\t\t(at -3.45 -0.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"864e8074-8eb9-4e4b-8159-0487285a24a6\")\n\t)\n\t(pad \"7\" smd rect\n\t\t(at -3.45 -0.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"5350a5e3-8369-4bac-a23f-f249846d3fec\")\n\t)\n\t(pad \"8\" smd rect\n\t\t(at -3.45 0.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"eb5de3db-4575-4783-a8a1-b079b8b8100f\")\n\t)\n\t(pad \"9\" smd rect\n\t\t(at -3.45 0.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"5e6d1003-1d8d-45ff-ad93-476f1b704125\")\n\t)\n\t(pad \"10\" smd rect\n\t\t(at -3.45 1)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"f1af46bf-940c-4cb6-b1b5-81a317c0a4c6\")\n\t)\n\t(pad \"11\" smd rect\n\t\t(at -3.45 1.4)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"b464e9dd-3513-4a63-af3e-c8a87edd01e0\")\n\t)\n\t(pad \"12\" smd rect\n\t\t(at -3.45 1.8)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"86637563-f5cf-4a9b-8817-43550943c87b\")\n\t)\n\t(pad \"13\" smd rect\n\t\t(at -3.45 2.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"5495ae1c-f5e9-4149-9d94-9afb8e543a58\")\n\t)\n\t(pad \"14\" smd rect\n\t\t(at -3.45 2.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"4536196a-7ca9-4a34-bf57-1c69bd3c5466\")\n\t)\n\t(pad \"15\" smd rect\n\t\t(at -2.6 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"eaf5d567-cec4-4d63-8e44-b090a91b9e78\")\n\t)\n\t(pad \"16\" smd rect\n\t\t(at -2.2 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"e7523306-6be4-44b4-9580-3f775e7d4f32\")\n\t)\n\t(pad \"17\" smd rect\n\t\t(at -1.8 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"6f8664a0-2328-4494-af2d-4ca24cc887f2\")\n\t)\n\t(pad \"18\" smd rect\n\t\t(at -1.4 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"63d9cf80-c4e1-44f9-a628-0503bc9d959c\")\n\t)\n\t(pad \"19\" smd rect\n\t\t(at -1 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"9015e259-5644-4d4f-997e-9053872a2b9b\")\n\t)\n\t(pad \"20\" smd rect\n\t\t(at -0.6 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"67037464-76e9-41f7-beea-4debd63c22c1\")\n\t)\n\t(pad \"21\" smd rect\n\t\t(at -0.2 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"22d1fe23-2db8-4c7f-be3a-6b33914b1e91\")\n\t)\n\t(pad \"22\" smd rect\n\t\t(at 0.2 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d4c2c132-92d5-4852-8be6-3d96fbc744d8\")\n\t)\n\t(pad \"23\" smd rect\n\t\t(at 0.6 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"ab4f55ab-0dbd-4ed7-9fde-beb5b87b7d7a\")\n\t)\n\t(pad \"24\" smd rect\n\t\t(at 1 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"bb353108-c0c7-49af-85fb-b6b1ef8c5586\")\n\t)\n\t(pad \"25\" smd rect\n\t\t(at 1.4 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"976912a7-f471-4c2f-9ec7-925a9c9a1061\")\n\t)\n\t(pad \"26\" smd rect\n\t\t(at 1.8 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"0b7b3d28-b63a-4e62-8baa-9ea0ebd6fa73\")\n\t)\n\t(pad \"27\" smd rect\n\t\t(at 2.2 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"4a14aadc-4e6f-49cd-8fe2-bedde6c649d8\")\n\t)\n\t(pad \"28\" smd rect\n\t\t(at 2.6 3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"3f0d6002-9850-49b4-a1be-70f9c4a8bfeb\")\n\t)\n\t(pad \"29\" smd rect\n\t\t(at 3.45 2.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"4bbecf23-2da9-4e31-a980-0691c32f091a\")\n\t)\n\t(pad \"30\" smd rect\n\t\t(at 3.45 2.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"3ec62665-6e13-4c25-a92c-bedda4b3d4b0\")\n\t)\n\t(pad \"31\" smd rect\n\t\t(at 3.45 1.8)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"ca971cd0-db14-4f87-98b0-33b497687ad7\")\n\t)\n\t(pad \"32\" smd rect\n\t\t(at 3.45 1.4)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"3eac1de6-e51a-4206-b6e1-204871c013ca\")\n\t)\n\t(pad \"33\" smd rect\n\t\t(at 3.45 1)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"db81cd11-cd49-46fe-be13-911253b3fe06\")\n\t)\n\t(pad \"34\" smd rect\n\t\t(at 3.45 0.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"ba652615-5772-4b0a-98ad-bf50de5ae1be\")\n\t)\n\t(pad \"35\" smd rect\n\t\t(at 3.45 0.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"7fe5662d-454c-4aa4-9e56-e2608ff537a6\")\n\t)\n\t(pad \"36\" smd rect\n\t\t(at 3.45 -0.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"a061b0da-44ff-47cc-bf9e-7fa24b7ef739\")\n\t)\n\t(pad \"37\" smd rect\n\t\t(at 3.45 -0.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"1acac891-c1dd-46e7-a440-574f33e8583a\")\n\t)\n\t(pad \"38\" smd rect\n\t\t(at 3.45 -1)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"4f0a46ee-11ab-41ba-baab-90831da7c266\")\n\t)\n\t(pad \"39\" smd rect\n\t\t(at 3.45 -1.4)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"b8ae6062-514b-4c29-9ecf-e3c164b0cfa2\")\n\t)\n\t(pad \"40\" smd rect\n\t\t(at 3.45 -1.8)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d8c1e63d-3649-4f74-b930-f8148d4127cf\")\n\t)\n\t(pad \"41\" smd rect\n\t\t(at 3.45 -2.2)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8f220c01-3332-42f8-b2c3-40a5e64c1887\")\n\t)\n\t(pad \"42\" smd rect\n\t\t(at 3.45 -2.6)\n\t\t(size 0.7 0.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"f7b23eea-941c-4963-bb38-689cf63249df\")\n\t)\n\t(pad \"43\" smd rect\n\t\t(at 2.6 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c31c1e72-a3c3-498c-9003-d31e5962a1bb\")\n\t)\n\t(pad \"44\" smd rect\n\t\t(at 2.2 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d60131d4-f500-4d18-be4f-8dbe5fd5e40b\")\n\t)\n\t(pad \"45\" smd rect\n\t\t(at 1.8 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c5c9b1d6-60eb-4cab-afd5-ca78075d3ec9\")\n\t)\n\t(pad \"46\" smd rect\n\t\t(at 1.4 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c66f0ae8-997e-40ab-876e-d53a57385a40\")\n\t)\n\t(pad \"47\" smd rect\n\t\t(at 1 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d2c10480-d81f-4579-ab66-4764de82dabf\")\n\t)\n\t(pad \"48\" smd rect\n\t\t(at 0.6 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"499a6967-2a80-4b83-994b-38768b69d10c\")\n\t)\n\t(pad \"49\" smd rect\n\t\t(at 0.2 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"6951d8e1-62ba-4146-b9fc-0512b6d91891\")\n\t)\n\t(pad \"50\" smd rect\n\t\t(at -0.2 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"cf9b14c9-2dd8-45e4-b964-cea2b819ba81\")\n\t)\n\t(pad \"51\" smd rect\n\t\t(at -0.6 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8c86f5d0-fe2f-420f-9b0d-c70755acdb1e\")\n\t)\n\t(pad \"52\" smd rect\n\t\t(at -1 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"617780b3-5104-4e58-9b12-5329d9987353\")\n\t)\n\t(pad \"53\" smd rect\n\t\t(at -1.4 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"f500f444-5685-4f13-af72-a88ab84bd97b\")\n\t)\n\t(pad \"54\" smd rect\n\t\t(at -1.8 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d2b0d7af-5bd9-48d9-a95d-890ba95b88ab\")\n\t)\n\t(pad \"55\" smd rect\n\t\t(at -2.2 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"bb12d758-11ca-4076-91fe-6d95feadabab\")\n\t)\n\t(pad \"56\" smd rect\n\t\t(at -2.6 -3.45)\n\t\t(size 0.2 0.7)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"240d6758-610f-43db-8d03-35fe5132581e\")\n\t)\n\t(pad \"57\" smd rect\n\t\t(at 0 0)\n\t\t(size 3.2 3.2)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8e197ce2-0e0d-4d37-80a2-62e7ab8597cb\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GPIO0",
+        "3": "GPIO1",
+        "4": null,
+        "5": null,
+        "6": "GPIO4",
+        "7": "GPIO5",
+        "8": null,
+        "9": null,
+        "10": "3V3",
+        "11": null,
+        "12": null,
+        "13": null,
+        "14": null,
+        "15": null,
+        "16": null,
+        "17": null,
+        "18": null,
+        "19": "GND",
+        "20": "XIN",
+        "21": "XOUT",
+        "22": "3V3",
+        "23": "1V1_CORE",
+        "24": "SWCLK",
+        "25": "SWDIO",
+        "26": "RUN_RESET",
+        "27": null,
+        "28": null,
+        "29": null,
+        "30": null,
+        "31": null,
+        "32": null,
+        "33": "3V3",
+        "34": null,
+        "35": null,
+        "36": null,
+        "37": "GPIO25_LED",
+        "38": null,
+        "39": null,
+        "40": null,
+        "41": null,
+        "42": "3V3",
+        "43": "3V3",
+        "44": "3V3",
+        "45": "1V1_CORE",
+        "46": "USB_DM",
+        "47": "USB_DP",
+        "48": "3V3",
+        "49": "3V3",
+        "50": "1V1_CORE",
+        "51": "QSPI_D3",
+        "52": "QSPI_CLK",
+        "53": "QSPI_D0",
+        "54": "QSPI_D2",
+        "55": "QSPI_D1",
+        "56": "QSPI_CS",
+        "57": "GND"
+      },
+      "position": [
+        28.0,
+        21.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "U2",
+      "value": "W25Q128JVSSIQ",
+      "footprint": "(footprint \"part-2\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"U2\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"367f6356-1571-40e7-92e3-59d9e016f74a\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"W25Q128JVSSIQ\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4d457330-ec3a-4a34-8fac-16349261049b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"81c5269e-58ca-4548-9391-8879af669c3c\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"b9797ceb-b6ad-4c1e-aa2d-639b27bbc2f1\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start -2 -2.5)\n\t\t(end 2 -2.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"fe3e25bd-4b0a-4971-a4b0-9f5ad832a0c0\")\n\t)\n\t(fp_line\n\t\t(start 2 2.5)\n\t\t(end -2 2.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"efbd29bb-216a-44f9-bee4-892f4a76ea99\")\n\t)\n\t(fp_line\n\t\t(start -2 -2.5)\n\t\t(end 2 -2.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"bd5a078a-a4b9-4f32-8f22-edb2f5570cc3\")\n\t)\n\t(fp_line\n\t\t(start 2 2.5)\n\t\t(end -2 2.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"228d7273-f164-446b-9549-f5225f39f773\")\n\t)\n\t(pad \"1\" smd rect\n\t\t(at -2.7 -1.905)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"01c95ca6-117b-47ab-9e63-98d85f663b17\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at -2.7 -0.635)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"467d4774-203c-4f31-b3e1-a2d135de936d\")\n\t)\n\t(pad \"3\" smd rect\n\t\t(at -2.7 0.635)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"890c4410-0d0a-4302-84b9-00a14e31f937\")\n\t)\n\t(pad \"4\" smd rect\n\t\t(at -2.7 1.905)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"f89a8f0a-66fb-4ca0-9a2a-eb7d6c5fa9ea\")\n\t)\n\t(pad \"5\" smd rect\n\t\t(at 2.7 1.905)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c78499f2-b8ba-42c9-8e37-0b0c2e725a98\")\n\t)\n\t(pad \"6\" smd rect\n\t\t(at 2.7 0.635)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"630877bb-27fc-4efe-80f0-33288de39abd\")\n\t)\n\t(pad \"7\" smd rect\n\t\t(at 2.7 -0.635)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"b9ec33e6-a447-4bbe-b848-3cf09d699ced\")\n\t)\n\t(pad \"8\" smd rect\n\t\t(at 2.7 -1.905)\n\t\t(size 1.5 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"affd787e-0ae5-4ab4-a700-81a8c56024c1\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "QSPI_CS",
+        "2": "QSPI_D1",
+        "3": "QSPI_D2",
+        "4": "GND",
+        "5": "QSPI_D0",
+        "6": "QSPI_CLK",
+        "7": "QSPI_D3",
+        "8": "3V3"
+      },
+      "position": [
+        28.0,
+        8.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "U3",
+      "value": "AP2112K-3.3TRG1",
+      "footprint": "(footprint \"part-3\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"U3\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"81518b6c-fa86-4b09-905d-5f951160468e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"AP2112K-3.3TRG1\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4f68d771-f502-4abe-b3c2-c32d17939fc8\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"7ba3b9f8-f74a-415d-ae93-2e65f1df1f63\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"0853d809-3021-4cfd-9301-320dc1438534\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start -0.65 -1.5)\n\t\t(end 0.65 -1.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"8763ba23-c88d-401b-9280-99bc8b49d43e\")\n\t)\n\t(fp_line\n\t\t(start 0.65 1.5)\n\t\t(end -0.65 1.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"296234a4-7b01-4838-8070-f10cba4cb251\")\n\t)\n\t(fp_line\n\t\t(start -0.65 -1.5)\n\t\t(end 0.65 -1.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4ab2ca4a-9880-4e3f-98ed-2034aac5dd6b\")\n\t)\n\t(fp_line\n\t\t(start 0.65 1.5)\n\t\t(end -0.65 1.5)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"76f3a544-2d7e-4643-a0ac-c86a69e825d9\")\n\t)\n\t(pad \"1\" smd rect\n\t\t(at -1.2 -0.95)\n\t\t(size 0.8 0.55)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"223b8b69-f390-4a36-8bf4-d663b6a045ba\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at -1.2 0)\n\t\t(size 0.8 0.55)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"97089913-2b50-43f6-b0e0-644467be99ee\")\n\t)\n\t(pad \"3\" smd rect\n\t\t(at -1.2 0.95)\n\t\t(size 0.8 0.55)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"cc805554-91e6-4266-a62e-7886d0bbb59e\")\n\t)\n\t(pad \"4\" smd rect\n\t\t(at 1.2 0.95)\n\t\t(size 0.8 0.55)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"bf5e65b0-8baa-4cf2-aef1-60441b566d16\")\n\t)\n\t(pad \"5\" smd rect\n\t\t(at 1.2 -0.95)\n\t\t(size 0.8 0.55)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"5c9a07e7-36a8-4a77-8e01-33142513f624\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "5V_VBUS",
+        "2": "GND",
+        "3": "5V_VBUS",
+        "4": null,
+        "5": "3V3"
+      },
+      "position": [
+        10.0,
+        10.33
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "J2",
+      "value": "GPIO-SWD",
+      "footprint": "(footprint \"part-4\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"J2\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"752516d4-77bc-4457-b4a7-0f54abf44f4d\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"GPIO-SWD\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"24772201-8b65-4c0f-85f5-bfd296856d79\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"c3730ed7-a7eb-43fe-b581-2f56f6295ad0\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"cf28dd77-46dd-4c55-8abf-2750d845a9ed\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start -1.27 -1.27)\n\t\t(end 1.27 -1.27)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"038e4946-f3c7-4633-af5d-3331653d4240\")\n\t)\n\t(fp_line\n\t\t(start -1.27 24.13)\n\t\t(end -1.27 -1.27)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"4a6e9ba2-c64e-45d4-9252-09b3870e011b\")\n\t)\n\t(fp_line\n\t\t(start 1.27 -1.27)\n\t\t(end 1.27 24.13)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"bea94db5-0b00-46f0-a544-83e0a67cc6c3\")\n\t)\n\t(fp_line\n\t\t(start 1.27 24.13)\n\t\t(end -1.27 24.13)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"7ab0b1ec-f174-463d-ac52-ccdc0d4c5d40\")\n\t)\n\t(fp_line\n\t\t(start -1.27 -1.27)\n\t\t(end 1.27 -1.27)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"22d96619-e0b3-45ff-97bc-1552cf36d398\")\n\t)\n\t(fp_line\n\t\t(start -1.27 24.13)\n\t\t(end -1.27 -1.27)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"13ddd47b-d0f2-438c-aa0a-44e3ca41fc11\")\n\t)\n\t(fp_line\n\t\t(start 1.27 -1.27)\n\t\t(end 1.27 24.13)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"cde8a6e0-a940-4c4e-9b5d-9fa059ef5526\")\n\t)\n\t(fp_line\n\t\t(start 1.27 24.13)\n\t\t(end -1.27 24.13)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"6d6c237d-ffde-496f-8a23-36285f66ee67\")\n\t)\n\t(pad \"1\" thru_hole rect\n\t\t(at 0 0)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"0f910578-c056-40b0-8646-d58e00b30351\")\n\t)\n\t(pad \"2\" thru_hole circle\n\t\t(at 0 2.54)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"712a6cdc-ece5-4ef9-b8ea-cdbbf03b0e98\")\n\t)\n\t(pad \"3\" thru_hole circle\n\t\t(at 0 5.08)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"4cc27a48-ee01-4dc2-b8fb-20e2cc420dab\")\n\t)\n\t(pad \"4\" thru_hole circle\n\t\t(at 0 7.62)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"e5cf445e-dd50-4ad8-bca5-ee02b8603e3e\")\n\t)\n\t(pad \"5\" thru_hole circle\n\t\t(at 0 10.16)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"f86d1d1a-c77a-49af-8816-750df5541b72\")\n\t)\n\t(pad \"6\" thru_hole circle\n\t\t(at 0 12.7)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"ff0b716f-8547-4e5c-81ce-253e71e0861f\")\n\t)\n\t(pad \"7\" thru_hole circle\n\t\t(at 0 15.24)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"6e6218d2-8455-4023-9f33-963cd6a57986\")\n\t)\n\t(pad \"8\" thru_hole circle\n\t\t(at 0 17.78)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"8733f7bd-124c-457c-b288-48178ca398bd\")\n\t)\n\t(pad \"9\" thru_hole circle\n\t\t(at 0 20.32)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"7df25750-6d8c-4b96-a421-dfc64d013ac1\")\n\t)\n\t(pad \"10\" thru_hole circle\n\t\t(at 0 22.86)\n\t\t(size 1.7 1.7)\n\t\t(drill 1)\n\t\t(layers \"*.Cu\" \"*.Mask\")\n\t\t(remove_unused_layers no)\n\t\t(uuid \"729319ba-674a-4105-98a9-9277af745229\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "GPIO0",
+        "4": "GPIO1",
+        "5": "GPIO4",
+        "6": "GPIO5",
+        "7": "SWCLK",
+        "8": "SWDIO",
+        "9": "RUN_RESET",
+        "10": "GND"
+      },
+      "position": [
+        53.0,
+        8.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "Y1",
+      "value": "ABM8-272-T3",
+      "footprint": "(footprint \"part-5\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"Y1\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"49f53eeb-ecd2-43c5-9d34-1b044bafc1cf\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"ABM8-272-T3\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"44059393-3287-408d-948f-4b7bd300aee9\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"360e6c24-54ad-4faf-9c1f-4009d79b05dc\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"c56fae50-eaf4-4a32-9486-40db7ba85835\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -1 0.85)\n\t\t(size 1.2 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"e50badc2-191b-47ff-8828-a70c5780fcd0\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 1 0.85)\n\t\t(size 1.2 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"b2679b51-44ae-43ac-9b8c-ec07735d85f7\")\n\t)\n\t(pad \"3\" smd rect\n\t\t(at 1 -0.85)\n\t\t(size 1.2 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"a027614f-d118-4852-bff9-ad54e05f06f3\")\n\t)\n\t(pad \"4\" smd rect\n\t\t(at -1 -0.85)\n\t\t(size 1.2 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8fdf9aad-5ec6-41d5-b69e-1b61f76cd664\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "XIN",
+        "2": "GND",
+        "3": "XTAL_DRIVE",
+        "4": "GND"
+      },
+      "position": [
+        25.0,
+        30.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "SW1",
+      "value": "RESET",
+      "footprint": "(footprint \"part-6\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"SW1\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"b0c4398d-0849-4735-962d-88a36593a043\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"RESET\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"231ca777-d084-4889-b699-efc1b90ac632\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"4e78cec9-1a14-448d-b619-5d0aeea13f4a\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"ed8c1638-dc3b-450e-84d6-7fc11ec2a232\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start -1.5 -2)\n\t\t(end 1.5 -2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"17ad2e8b-fa69-430c-892a-475fa5efe47e\")\n\t)\n\t(fp_line\n\t\t(start 1.5 2)\n\t\t(end -1.5 2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"c65947fc-f4d2-4216-b64e-c92bacec9528\")\n\t)\n\t(fp_line\n\t\t(start -1.5 -2)\n\t\t(end 1.5 -2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"8b2244b4-7209-4b29-9c76-ff2d34e963b9\")\n\t)\n\t(fp_line\n\t\t(start 1.5 2)\n\t\t(end -1.5 2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"3486880b-0da3-4f8f-af85-80528b0a575c\")\n\t)\n\t(pad \"1\" smd rect\n\t\t(at -1.8 -1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"113214e9-0cea-4559-b3e6-a29370c052a0\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 1.8 -1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"1c5b70ba-9ccb-4e90-8dd4-a2618ac9b247\")\n\t)\n\t(pad \"3\" smd rect\n\t\t(at -1.8 1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c773766a-2923-4143-8c64-dac4390c6f82\")\n\t)\n\t(pad \"4\" smd rect\n\t\t(at 1.8 1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"0921a02a-09ad-4f79-8a32-f399e9265edf\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "GND",
+        "2": "RUN_RESET",
+        "3": null,
+        "4": null
+      },
+      "position": [
+        43.0,
+        30.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "SW2",
+      "value": "BOOTSEL",
+      "footprint": "(footprint \"part-7\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"SW2\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"e5015705-16ed-417c-948d-c5ba3bf44bb9\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"BOOTSEL\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"cc1d614c-fb4e-48c7-b35c-5dc33c061734\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"569b5086-cc9d-4b48-adb2-a5ff61bc72c2\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"0644da15-4bb9-45d3-9507-9bdfc1d0d578\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start -1.5 -2)\n\t\t(end 1.5 -2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"5501f857-41c2-4ff0-b3ec-e62adc3f1b5a\")\n\t)\n\t(fp_line\n\t\t(start 1.5 2)\n\t\t(end -1.5 2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.SilkS\")\n\t\t(uuid \"186f2040-933d-4e21-985f-c7f61f4e3400\")\n\t)\n\t(fp_line\n\t\t(start -1.5 -2)\n\t\t(end 1.5 -2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"39626cc3-fa8e-4b20-be3f-b84e957dece8\")\n\t)\n\t(fp_line\n\t\t(start 1.5 2)\n\t\t(end -1.5 2)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"1c084a46-f22d-4d84-8221-c4d148e5872f\")\n\t)\n\t(pad \"1\" smd rect\n\t\t(at -1.8 -1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"7a52bbc1-9b70-4f64-aa37-402f2ad2e458\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 1.8 -1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"bfecbf97-d885-4cb2-909f-8ac559281146\")\n\t)\n\t(pad \"3\" smd rect\n\t\t(at -1.8 1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c6c366f0-6115-4417-9a5a-1cabca2b9b1f\")\n\t)\n\t(pad \"4\" smd rect\n\t\t(at 1.8 1)\n\t\t(size 1 1)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"661bc817-b61b-4cac-bf7d-c626d2968519\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "GND",
+        "2": "BOOT_BUTTON",
+        "3": null,
+        "4": null
+      },
+      "position": [
+        40.0,
+        8.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "D1",
+      "value": "GREEN",
+      "footprint": "(footprint \"part-8\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"D1\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"02883411-dc76-4003-b66d-c8721a6e0c07\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"GREEN\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"5069b539-d04a-4abd-843b-dc91e65d8900\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"2c913381-f244-4d06-be8c-631cfe92d22f\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"9de8ed42-d2e7-49e9-91a8-25c438459e93\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"72e456c3-a7db-435f-a4d4-9e35cef4f666\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"29cff2f2-c529-427a-a83e-350e7ee939a8\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "GND",
+        "2": "LED_A"
+      },
+      "position": [
+        44.0,
+        20.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C1",
+      "value": "10uF",
+      "footprint": "(footprint \"part-9\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C1\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"37a6ebbe-5966-41a0-9cb3-5c41875c9940\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"10uF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"8517718d-d2fb-4cf5-ad06-069f3ebce754\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"0598cbac-c7c2-4d69-80a3-115d54c070db\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"1bdd5b38-a856-4fe6-92f2-52b60bbaea98\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"fa3beb9c-2a44-4bd6-a1d2-96e152268df6\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c247723f-7089-43b8-b185-ed1fecf68fa4\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "5V_VBUS",
+        "2": "GND"
+      },
+      "position": [
+        7.0,
+        15.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C2",
+      "value": "10uF",
+      "footprint": "(footprint \"part-10\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C2\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"07d3ef93-7793-4f4f-b84c-2536cd6691e7\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"10uF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"e5710225-45fb-4d09-924b-6e647c9b28de\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"89bdedf7-a665-4d10-8ff9-844d3d5bb54f\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"beca50e7-0fc1-4761-a18f-f030cadfba0c\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"89d6c7ba-ada3-4984-bea9-0a617cd11fb3\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"7d1a7479-2f3b-433b-bc29-2d19fb386afe\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        14.0,
+        15.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C3",
+      "value": "1uF",
+      "footprint": "(footprint \"part-11\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C3\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"5b0b3c4c-a77b-4598-9b5f-88e6d1e80ab6\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"1uF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"9a8dba12-cc27-4c65-886b-dce513ad69b0\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"c2b2fd1e-d756-414e-ba6c-beb8818072bf\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"f96759b3-3129-4e28-869c-9be429f81c18\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"0ae9fed7-52f2-4c2a-b0ca-300864ce914a\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"bd774733-668c-4b18-88be-6f2e76d2efa7\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "1V1_CORE",
+        "2": "GND"
+      },
+      "position": [
+        21.0,
+        8.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C4",
+      "value": "15pF",
+      "footprint": "(footprint \"part-12\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C4\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"9f3cd8be-59f8-4734-8ce4-022419f3fa3b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"15pF\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"d3d18404-f28c-40b5-9bf7-e15687223698\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"e534d5bc-f3e8-4027-ba2e-60cadae41440\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"0f6eba61-f1b7-4115-9acd-367c2312d517\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"63be2e9f-5997-4faa-b33f-87b12b055c1e\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8eed6b28-c8ec-4c7c-aa53-e732b2dc2ecc\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "XIN",
+        "2": "GND"
+      },
+      "position": [
+        21.0,
+        30.0
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "C5",
+      "value": "15pF",
+      "footprint": "(footprint \"part-13\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C5\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"bddcf31b-f391-4314-a06a-188e28590b1b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"15pF\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"cdc41908-3de3-48b0-a126-8779d34eceda\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"ebf89a54-7397-4722-910b-7362942bf99b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"c9b6a240-6881-409c-8148-3da6197fd74b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"15ef3615-186b-49fc-b689-7c69789e3ee2\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"dc41cce0-b672-41be-bb76-801bd59317e7\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "XTAL_DRIVE",
+        "2": "GND"
+      },
+      "position": [
+        29.0,
+        32.0
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "R1",
+      "value": "5.1k",
+      "footprint": "(footprint \"part-14\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R1\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"3cb11a22-ccb2-4c3d-b4f4-8c12b39ad175\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"5.1k\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"d729387c-ef1d-47d0-9851-1519f492d8a0\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"a4c6170a-236b-4269-be68-15f98471a62d\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"90dde100-8e6f-44d1-b97c-fc8e7a0d47ac\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"e9dc6d1a-bf32-4b2d-b3bf-e6c82d27a21e\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"76da4b36-0b99-46bc-9076-05917c6b7a90\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "CC1",
+        "2": "GND"
+      },
+      "position": [
+        5.0,
+        10.33
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "R2",
+      "value": "5.1k",
+      "footprint": "(footprint \"part-15\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R2\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"36cdda0d-a79b-4d83-bb59-0de24690ab96\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"5.1k\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"96e883ea-c57b-42db-b840-eed88ce40e56\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"91d2cb88-2be0-43ed-9177-592c242fa1c1\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"bfec902d-95db-49a3-8daa-ab6769e687bf\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"0f8a5fa7-b495-4163-9767-e03fa8a6c17f\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"6efdfaeb-5bdb-4c6e-bf82-621b64159341\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "CC2",
+        "2": "GND"
+      },
+      "position": [
+        15.0,
+        10.0
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "R3",
+      "value": "27R",
+      "footprint": "(footprint \"part-16\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R3\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"472d5277-7306-49f3-94ac-d315aff34f8f\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"27R\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"78d19ac1-f012-4cb1-bd37-829436fbf842\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"4ed882e7-2363-478a-9164-654fd6239752\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"50c0ff32-d30d-4d7a-8cf9-900cf525d8a4\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"690ac1a6-36b5-4e3f-9427-0028d0e8cc55\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d8071ff7-9a74-446b-9dc2-1f6f7abf3fe2\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "USB_CONN_DP",
+        "2": "USB_DP"
+      },
+      "position": [
+        20.0,
+        12.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "R4",
+      "value": "27R",
+      "footprint": "(footprint \"part-17\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R4\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"a9619ee2-c3d4-4b33-8bab-b5460d2334e2\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"27R\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"c9a821a4-860a-4011-997f-97f849255471\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"92a7aad3-8f65-4dee-a6b8-05fa46e74157\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"68a17402-ba37-45e0-b79e-5b670dfbd0d7\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"cda51662-9ca9-4c1a-b1d9-91f4457f475d\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"2add080c-9985-450e-b732-84d2d10b015a\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "USB_CONN_DM",
+        "2": "USB_DM"
+      },
+      "position": [
+        20.0,
+        16.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "R5",
+      "value": "1k",
+      "footprint": "(footprint \"part-18\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R5\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"6ae54e60-281f-4a07-817d-0b768b19f15a\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"1k\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"308bf064-0325-4b97-a284-55d4892bf6f3\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"1c1d8e6b-2ffc-44e7-9034-d3e99a265c10\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"3eeef24c-0806-407f-be76-66f5c6cb46e9\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"58c385cf-fd47-4abc-9723-f70ee87adc08\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"42eccf67-05f5-4086-8af5-6b3f8ef9bd98\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "XOUT",
+        "2": "XTAL_DRIVE"
+      },
+      "position": [
+        32.5,
+        28.5
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "R6",
+      "value": "1k",
+      "footprint": "(footprint \"part-19\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R6\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"ba750b94-654b-417d-a4cc-51b02f5cf209\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"1k\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"d49fe5bd-c741-4ff1-993b-0abb0e2ec334\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"787f86a7-4b36-4435-b614-f16f70be89fa\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"277091d8-85ba-48f6-bafc-de6cb1b09e41\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"36c8b263-6c2e-43e4-bd83-7f22ca704640\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"91db873f-e118-4867-9b94-4ce7e207bdde\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "QSPI_CS",
+        "2": "BOOT_BUTTON"
+      },
+      "position": [
+        36.0,
+        12.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "R7",
+      "value": "10k",
+      "footprint": "(footprint \"part-20\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R7\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"5f7581fb-024a-44ea-a6ea-e02dbd47523e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"10k\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"b67c5c0f-bc3a-403d-bccf-6f07e4086652\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"9f6af290-7188-46bf-bdb6-8304a058e2b4\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"abdbec94-7313-4b9e-9608-319f75e8cc08\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"09b742a8-a583-4600-9432-e504e15421e2\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8ca14045-e21f-447c-9f6a-f9c18ac90de9\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "RUN_RESET"
+      },
+      "position": [
+        43.0,
+        26.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "R8",
+      "value": "1k",
+      "footprint": "(footprint \"part-21\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"R8\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4b5aa546-fd4b-4aaa-b85e-55823afba6d5\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"1k\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"369d3bc0-a218-4704-b50a-c2979f80faa8\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"e0a4f304-6bfd-40e8-8853-e36fc746f4b7\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"62af3bb7-27e8-47d8-bb91-e348be7dcc87\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"8b3336f5-8f59-4fa0-824d-670ace9fed8f\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.95 0)\n\t\t(size 1 1.3)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"bc68ab13-5be3-4de8-a162-4c27a2676aa8\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "GPIO25_LED",
+        "2": "LED_A"
+      },
+      "position": [
+        44.0,
+        24.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C20",
+      "value": "100nF",
+      "footprint": "(footprint \"part-22\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C20\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"efe42da5-77b1-4a9f-ae2c-bf906c85b311\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"07e46745-902e-4a89-acde-a19a20d02def\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"b8521065-7d74-4be9-a4a3-4c39d0d890c0\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"52355905-7ada-45b0-8ca7-05f7a79a5d02\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"b02eb0cd-dae2-43bb-a76a-a5a1180e32c9\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"2c36abdb-bccc-44e1-9657-ad681b412150\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        22.0,
+        18.4
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "C21",
+      "value": "100nF",
+      "footprint": "(footprint \"part-23\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C21\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"e778bea4-8189-4cd8-a6a8-dec6735c8ca3\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"68735cae-94e4-447d-b698-1b3b0dd11622\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"88474337-c6bf-4e4d-aed3-8be96fec9783\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"7c167122-184f-4bf9-91e1-51132bb37237\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"5e04f96f-b24a-4db7-84a4-551aff1f83b2\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c152c1b1-6476-4954-87f2-a6d08a7fb35f\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        22.0,
+        22.0
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "C22",
+      "value": "100nF",
+      "footprint": "(footprint \"part-24\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C22\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4ff7de0c-701f-42ee-baed-5d1d32489d92\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"3e0f088e-7062-44a3-b1a0-5ff368f4c8e3\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"7cadadd9-8998-43b5-a859-e042753ff2a0\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"502a095c-bebc-446b-a178-a7e575b7f9ab\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"554d99ae-3532-40cb-8c0e-e1b0f55b5185\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"3d32bf84-c36f-4b08-83ac-f4b1e550c6fd\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        28.2,
+        27.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C23",
+      "value": "100nF",
+      "footprint": "(footprint \"part-25\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C23\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"6725f408-e1c9-4d9b-bf3b-0d7b5972fc65\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"6bf3a85b-5e8a-4bef-8fcf-0d7838ec5b48\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"46740548-04f8-4533-b3a8-4f5fb252d4ec\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"499d99a0-3c84-4775-aa89-94cb475880e1\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"2c4b7209-9971-459a-839b-81bd2a3df611\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"1e0f3220-a2f4-468a-ac23-366b3fec66d6\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        34.0,
+        22.0
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "C24",
+      "value": "100nF",
+      "footprint": "(footprint \"part-26\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C24\"\n\t\t(at 0 -2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4f921b5b-9885-4aa8-8fb2-e3ba67deca22\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"fa1586c3-3400-4987-bbde-a9ab54c0ee15\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"0ea98f04-8058-495e-b551-7ea7523b62b3\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"c1360221-f77b-49b3-aa0c-f8639f54b99a\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d4869f15-5542-4e4e-97e7-66f8165d2386\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"aa52b139-95dc-4f80-a52e-d04aebceb14c\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        34.0,
+        18.4
+      ],
+      "rotation": -90.0
+    },
+    {
+      "reference": "C25",
+      "value": "100nF",
+      "footprint": "(footprint \"part-27\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C25\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"42439508-6503-4ea7-8f6a-ce0cb28b86bc\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"8b9b1765-a253-4dbd-98df-bdc80f6c696b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"84f3e0f9-e9ba-4742-a733-30a995e08275\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"b427a1fe-2438-4f1b-8a98-b34fda4e5be9\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"6e585ebe-d7d7-473e-ab01-685a6f203ad7\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"33aeeb83-de9f-4f79-b8cc-abcfe456556c\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        28.2,
+        15.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C26",
+      "value": "100nF",
+      "footprint": "(footprint \"part-28\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C26\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"08969484-2193-4ddb-8620-119a88ef438d\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"7ac65527-a842-41fa-b0f1-cc6c015f0c1b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"05081e61-0a43-499e-b355-98768c3dceef\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"2eb546b1-146a-4dcf-8788-a160f047d33f\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"f52b4596-cb81-41eb-bec3-e8df6f2ac681\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"441a3743-3af7-46d4-abeb-10c02b257221\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        30.3,
+        15.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C27",
+      "value": "100nF",
+      "footprint": "(footprint \"part-29\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C27\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4b0f4f32-f53e-4417-9d12-4fda234be0b8\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"ba8207fe-5ac7-4847-8441-11b96eb1d0f8\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"9332da93-777c-40ae-a2c5-bd90cd058ed8\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"0ca9ab4a-7cb8-44a9-8ee9-1cd04e6aec22\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"e8ec353f-1690-4843-9815-a5379b493906\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"651318a0-7abb-4a6f-9d78-52cc737075f8\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        26.0,
+        15.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C28",
+      "value": "100nF",
+      "footprint": "(footprint \"part-30\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C28\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"2d614a3d-f876-4e51-8489-c75739660647\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"1fb58763-4295-467a-932e-97afa3930637\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"3c5c6600-6edc-4172-8262-d4a8e1f20efc\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"6f120803-1653-4870-86d6-221754de1e6c\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d9436def-e77c-4968-9590-0f5d5f8a859d\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"10db78a1-4629-494f-a8d2-ec0cc7a0214d\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "1V1_CORE",
+        "2": "GND"
+      },
+      "position": [
+        26.0,
+        27.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C29",
+      "value": "100nF",
+      "footprint": "(footprint \"part-31\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C29\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4de4cdd8-1fc3-4f30-8a58-aa966900059e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4d9bdcd8-3471-4566-abba-94ab6ad6c074\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"25da3b1b-9060-465c-98fc-ce3ca0b2d376\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"ec7c7e8e-73c6-443a-babe-f94c8b523824\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"97a624ee-2c88-4ea9-92e0-fe8c9d83472f\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"0759bd6b-d5f5-4dbf-b6ab-229cdc3256d0\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "1V1_CORE",
+        "2": "GND"
+      },
+      "position": [
+        28.2,
+        13.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C30",
+      "value": "1uF",
+      "footprint": "(footprint \"part-32\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C30\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"71af0853-671c-4815-9752-624eb3dc3648\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"1uF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"6fddb460-722e-4e0f-bccd-d9cee918a447\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"67bf13d1-70ed-4334-8d7e-dc4106cf1c24\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"2b449fbd-a23f-4786-b9c1-3c946af42d4d\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c6bf3523-476a-4372-b04e-b04eb8c5c6d2\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"c243098a-3686-4834-9603-223e15ce9944\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        30.3,
+        13.0
+      ],
+      "rotation": 0.0
+    },
+    {
+      "reference": "C31",
+      "value": "100nF",
+      "footprint": "(footprint \"part-33\"\n\t(version 20260206)\n\t(generator \"pcbnew\")\n\t(generator_version \"10.0\")\n\t(layer \"F.Cu\")\n\t(property \"Reference\" \"C31\"\n\t\t(at 0 -2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"5da5bd20-a809-4aa1-8f93-592df1664f14\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 2 0)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"dde292a3-7e08-4e16-8685-13ca18018669\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"f0d3751b-2a0a-4c81-81d6-43000e38f9e2\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"c3902b61-0eae-4421-88c6-0f08c88a46f6\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(pad \"1\" smd rect\n\t\t(at -0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"5df07f39-4120-4150-8e8d-6c81fd1708e9\")\n\t)\n\t(pad \"2\" smd rect\n\t\t(at 0.5 0)\n\t\t(size 0.6 0.6)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(uuid \"d1bf37e3-eb6a-4e20-a2a8-be2e208d1a49\")\n\t)\n\t(embedded_fonts no)\n)\n",
+      "nets": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "position": [
+        28.0,
+        4.5
+      ],
+      "rotation": 0.0
+    }
+  ],
+  "attribution": {
+    "connector": {
+      "manufacturer": "GCT",
+      "part": "USB4105-GF-A",
+      "drawing": "https://gct.co/files/drawings/usb4105.pdf",
+      "native_footprint": "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+    },
+    "source": "Exact selected native circuit; all non-J1 footprint primitives and poses retained; original Cu stripped for new automatic construction."
+  }
+}

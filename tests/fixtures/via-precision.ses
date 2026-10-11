@@ -1,0 +1,63 @@
+(session source
+  (base_design source)
+  (placement
+    (resolution um 10)
+    (component top
+      (place R1 30000 60000 front 0)
+    )
+    (component bottom
+      (place R2 170000 60000 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "netlist_shatter_viz")
+      (host_version control)
+    )
+    (library_out 
+      (padstack "Via[0-1]_812800:406400_nm"
+        (shape
+          (circle F.Cu 8128 0 0)
+        )
+        (shape
+          (circle B.Cu 8128 0 0)
+        )
+      )
+    )
+    (network_out 
+      (net signal
+        (wire
+          (path F.Cu 2032
+            168942 44750
+            53823 44750
+            38573 60000
+          )
+        )
+        (wire
+          (path B.Cu 2032
+            170000 51427
+            168942 50369
+            168942 44750
+          )
+        )
+        (wire
+          (path B.Cu 2032
+            170000 60000
+            170000 51427
+          )
+        )
+        (wire
+          (path F.Cu 2032
+            30000 60000
+            38573 60000
+          )
+        )
+        (via "Via[0-1]_812800:406400_nm" 168942 44750
+        )
+      )
+    )
+  )
+)

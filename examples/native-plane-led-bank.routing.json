@@ -1,0 +1,36 @@
+{
+  "reference_planes": [
+    {
+      "net": "LED1_A",
+      "signal_layer": "F.Cu",
+      "reference_layer": "B.Cu",
+      "reference_net": "GND",
+      "reference_terminal": "J1.2",
+      "margin_mm": 0.15
+    },
+    {
+      "net": "LED2_A",
+      "signal_layer": "F.Cu",
+      "reference_layer": "B.Cu",
+      "reference_net": "GND",
+      "reference_terminal": "J1.2",
+      "margin_mm": 0.15
+    },
+    {
+      "net": "LED3_A",
+      "signal_layer": "F.Cu",
+      "reference_layer": "B.Cu",
+      "reference_net": "GND",
+      "reference_terminal": "J1.2",
+      "margin_mm": 0.15
+    },
+    {
+      "net": "LED4_A",
+      "signal_layer": "F.Cu",
+      "reference_layer": "B.Cu",
+      "reference_net": "GND",
+      "reference_terminal": "J1.2",
+      "margin_mm": 0.15
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "source_board_sha256": "747f07f91defd91f48ec3b9b0f9fa179eee10bd3a769a6815dfc3b09c0c76988",
+  "native_version": "10.0.6",
+  "coordinate_convention": "Native integer nanometres; Excellon +X right, +Y up (native Y reflected).",
+  "copper_layers": [
+    "F.Cu",
+    "B.Cu"
+  ],
+  "holes": [
+    {
+      "uuid": "a2966059-3032-4238-aec2-0ddf9d47cf84",
+      "reference": "H1",
+      "pin": "",
+      "diameter_nm": 650321,
+      "ends_nm": [
+        [
+          7123456,
+          -8654321
+        ],
+        [
+          7123456,
+          -8654321
+        ]
+      ],
+      "plated": false,
+      "layer_pair": [
+        1,
+        2
+      ]
+    },
+    {
+      "uuid": "971ed1b0-9124-4bd3-a41c-46fc85d5f527",
+      "reference": "H0",
+      "pin": "1",
+      "diameter_nm": 600124,
+      "ends_nm": [
+        [
+          2973103,
+          -8177463
+        ],
+        [
+          3273809,
+          -9131179
+        ]
+      ],
+      "plated": true,
+      "layer_pair": [
+        1,
+        2
+      ]
+    },
+    {
+      "uuid": "07d471a2-896f-4281-8dad-2a5386b0b3de",
+      "reference": "H2",
+      "pin": "",
+      "diameter_nm": 650321,
+      "ends_nm": [
+        [
+          10833065,
+          -8344002
+        ],
+        [
+          11413847,
+          -8964640
+        ]
+      ],
+      "plated": false,
+      "layer_pair": [
+        1,
+        2
+      ]
+    },
+    {
+      "uuid": "100ad782-9e14-4a93-8a38-a83775f6ead9",
+      "reference": null,
+      "pin": null,
+      "diameter_nm": 406400,
+      "ends_nm": [
+        [
+          3123456,
+          -3654321
+        ],
+        [
+          3123456,
+          -3654321
+        ]
+      ],
+      "plated": true,
+      "layer_pair": [
+        1,
+        2
+      ]
+    },
+    {
+      "uuid": "91b394e6-d907-406c-bc38-3c5102bf68e3",
+      "reference": null,
+      "pin": null,
+      "diameter_nm": 600123,
+      "ends_nm": [
+        [
+          7123456,
+          -3654321
+        ],
+        [
+          7123456,
+          -3654321
+        ]
+      ],
+      "plated": true,
+      "layer_pair": [
+        1,
+        2
+      ]
+    },
+    {
+      "uuid": "adc2d320-a5cc-41e5-8ddb-c9ceb8697c7a",
+      "reference": null,
+      "pin": null,
+      "diameter_nm": 600124,
+      "ends_nm": [
+        [
+          11123456,
+          -3654321
+        ],
+        [
+          11123456,
+          -3654321
+        ]
+      ],
+      "plated": true,
+      "layer_pair": [
+        1,
+        2
+      ]
+    }
+  ]
+}

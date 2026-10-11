@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/adafruit/Adafruit-TCA9548A-I2C-Multiplexer-PCB",
+  "commit": "c5bdfe4c8e860cee7400539d6e45a235da7afcd2",
+  "files_sha256": {
+    "Adafruit TCA9548A.brd": "30daff5274a01c51231acf7d136e7b2792a78b3eded8966ac974686c0959cb44",
+    "Adafruit TCA9548A.sch": "45e6787c46112056932781c802ffc76bf46c5f9c889b1e5e29078bef65df659d",
+    "README.md": "16acac7d1ec65ea430f426d0a597bc543af8d30e5e850a730ffa0eebaa76323d",
+    "license.txt": "1f63e1f4676a433423b2c2ff1ccd9e80093f341f10b81f0ac0106342bc7bbe89"
+  }
+}

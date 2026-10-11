@@ -1,0 +1,11 @@
+(pcb "precision"
+ (parser (string_quote ") (space_in_quoted_tokens on) (host_cad "netlist_shatter_viz") (host_version "control"))
+ (resolution um 10) (unit um)
+ (structure (layer "F.Cu" (type signal) (property (index 0))) (layer "B.Cu" (type signal) (property (index 1)))
+  (boundary (rect pcb 0 0 20000 12000)) (via "Via[0-1]_812800:406400_nm") (rule (width 203.2) (clearance 254)))
+ (placement (component "top" (place "R1" 3000 6000 front 0)) (component "bottom" (place "R2" 17000 6000 front 0)))
+ (library (image "top" (pin "pad_top" "1" 0 0)) (image "bottom" (pin "pad_bottom" "1" 0 0))
+  (padstack "pad_top" (shape (rect "F.Cu" -500 -500 500 500)))
+  (padstack "pad_bottom" (shape (rect "B.Cu" -500 -500 500 500)))
+  (padstack "Via[0-1]_812800:406400_nm" (shape (circle "F.Cu" 812.8)) (shape (circle "B.Cu" 812.8))))
+ (network (net "signal" (pins R1-1 R2-1))) (wiring))

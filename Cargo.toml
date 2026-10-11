@@ -1,0 +1,29 @@
+[package]
+name = "netlist-shatter-viz"
+version = "0.1.0-alpha.1"
+edition = "2024"
+license = "MIT"
+description = "Local PCB placement, routing and guarded engineering export workbench"
+repository = "https://github.com/steph4n-gh/netlist-shatter-viz"
+
+[lib]
+name = "netlist_shatter_viz"
+path = "src/lib.rs"
+
+[[bin]]
+name = "netlist-shatter-viz"
+path = "src/main.rs"
+
+[[bin]]
+name = "export_manufacturing"
+path = "src/bin/export_manufacturing.rs"
+
+[[bin]]
+name = "route_dsn"
+path = "src/bin/route_dsn.rs"
+
+[dependencies]
+macroquad = "0.4.13"
+spectral-pruner = "1.0.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

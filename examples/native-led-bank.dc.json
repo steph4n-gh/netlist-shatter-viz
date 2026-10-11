@@ -1,0 +1,39 @@
+{
+  "purpose": "Supply-trace screening at an assumed 3 mA per LED branch; not a LED or resistor device simulation.",
+  "nets": [
+    "+5V"
+  ],
+  "sources_v": {
+    "J1.1": 5.0
+  },
+  "loads_a": {
+    "R1.1": 0.003,
+    "R2.1": 0.003,
+    "R3.1": 0.003,
+    "R4.1": 0.003
+  },
+  "voltage_limits_v": {
+    "R1.1": [
+      4.75,
+      5.05
+    ],
+    "R2.1": [
+      4.75,
+      5.05
+    ],
+    "R3.1": [
+      4.75,
+      5.05
+    ],
+    "R4.1": [
+      4.75,
+      5.05
+    ]
+  },
+  "copper": {
+    "temperature_c": 85,
+    "copper_mm": 0.035,
+    "plating_mm": 0.025,
+    "board_mm": 1.6
+  }
+}

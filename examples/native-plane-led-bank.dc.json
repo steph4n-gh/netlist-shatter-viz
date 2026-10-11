@@ -1,0 +1,123 @@
+{
+  "purpose": "Demonstration LED supply with explicit return copper and a placed capacitor. Constant 3 mA branches omit nonlinear LED/resistor device behavior; C1 effective capacitance/ESR and load events are assumed, not component-qualified.",
+  "nets": [
+    "+5V",
+    "GND"
+  ],
+  "sources_v": {
+    "J1.1": 5.0,
+    "J1.2": 0
+  },
+  "loads_a": {
+    "R1.1": 0.003,
+    "R2.1": 0.003,
+    "R3.1": 0.003,
+    "R4.1": 0.003
+  },
+  "voltage_limits_v": {
+    "R1.1": [
+      4.75,
+      5.05
+    ],
+    "R2.1": [
+      4.75,
+      5.05
+    ],
+    "R3.1": [
+      4.75,
+      5.05
+    ],
+    "R4.1": [
+      4.75,
+      5.05
+    ]
+  },
+  "copper": {
+    "temperature_c": 85,
+    "copper_mm": 0.035,
+    "plating_mm": 0.025,
+    "board_mm": 1.6
+  },
+  "returns": {
+    "R1.1": "D1.1",
+    "R2.1": "D2.1",
+    "R3.1": "D3.1",
+    "R4.1": "D4.1"
+  },
+  "rc_hold": {
+    "source_pair": [
+      "J1.1",
+      "J1.2"
+    ],
+    "capacitors": [
+      {
+        "reference": "C1",
+        "a": "C1.1",
+        "b": "C1.2",
+        "farad": 5e-06,
+        "esr_ohm": 0.05
+      }
+    ],
+    "events": [
+      {
+        "name": "all_leds_on",
+        "before_a": {
+          "R1.1": 0,
+          "R2.1": 0,
+          "R3.1": 0,
+          "R4.1": 0
+        },
+        "after_a": {
+          "R1.1": 0.003,
+          "R2.1": 0.003,
+          "R3.1": 0.003,
+          "R4.1": 0.003
+        },
+        "source_v": 5,
+        "duration_s": 5e-06
+      },
+      {
+        "name": "all_leds_off",
+        "before_a": {
+          "R1.1": 0.003,
+          "R2.1": 0.003,
+          "R3.1": 0.003,
+          "R4.1": 0.003
+        },
+        "after_a": {
+          "R1.1": 0,
+          "R2.1": 0,
+          "R3.1": 0,
+          "R4.1": 0
+        },
+        "source_v": 5,
+        "duration_s": 5e-06
+      }
+    ],
+    "voltage_limits_v": {
+      "R1.1": [
+        4.75,
+        5.05
+      ],
+      "R2.1": [
+        4.75,
+        5.05
+      ],
+      "R3.1": [
+        4.75,
+        5.05
+      ],
+      "R4.1": [
+        4.75,
+        5.05
+      ]
+    },
+    "allowance_v": 0.005,
+    "time_step_s": 1e-08,
+    "voltage_tolerance_v": 0.0001
+  },
+  "plane_mesh": {
+    "pitch_mm": 0.5,
+    "voltage_tolerance_v": 0.001
+  }
+}

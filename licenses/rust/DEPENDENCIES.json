@@ -1,0 +1,638 @@
+[
+  {
+    "name": "adler2",
+    "version": "2.0.1",
+    "license": "0BSD OR MIT OR Apache-2.0",
+    "repository": "https://github.com/oyvindln/adler2",
+    "authors": [
+      "Jonas Schievink <jonasschievink@gmail.com>",
+      "oyvindln <oyvindln@users.noreply.github.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/adler2-2.0.1/LICENSE-0BSD",
+      "licenses/rust/adler2-2.0.1/LICENSE-APACHE",
+      "licenses/rust/adler2-2.0.1/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "allocator-api2",
+    "version": "0.2.21",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/zakarumych/allocator-api2",
+    "authors": [
+      "Zakarum <zaq.dev@icloud.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/allocator-api2-0.2.21/LICENSE-APACHE",
+      "licenses/rust/allocator-api2-0.2.21/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "autocfg",
+    "version": "1.5.0",
+    "license": "Apache-2.0 OR MIT",
+    "repository": "https://github.com/cuviper/autocfg",
+    "authors": [
+      "Josh Stone <cuviper@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/autocfg-1.5.0/LICENSE-APACHE",
+      "licenses/rust/autocfg-1.5.0/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "bitflags",
+    "version": "1.3.2",
+    "license": "MIT/Apache-2.0",
+    "repository": "https://github.com/bitflags/bitflags",
+    "authors": [
+      "The Rust Project Developers"
+    ],
+    "license_texts": [
+      "licenses/rust/bitflags-1.3.2/LICENSE-APACHE",
+      "licenses/rust/bitflags-1.3.2/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "bytemuck",
+    "version": "1.25.0",
+    "license": "Zlib OR Apache-2.0 OR MIT",
+    "repository": "https://github.com/Lokathor/bytemuck",
+    "authors": [
+      "Lokathor <zefria@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/bytemuck-1.25.0/LICENSE-APACHE",
+      "licenses/rust/bytemuck-1.25.0/LICENSE-MIT",
+      "licenses/rust/bytemuck-1.25.0/LICENSE-ZLIB"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "byteorder",
+    "version": "1.5.0",
+    "license": "Unlicense OR MIT",
+    "repository": "https://github.com/BurntSushi/byteorder",
+    "authors": [
+      "Andrew Gallant <jamslam@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/byteorder-1.5.0/COPYING",
+      "licenses/rust/byteorder-1.5.0/LICENSE-MIT",
+      "licenses/rust/byteorder-1.5.0/UNLICENSE"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "cfg-if",
+    "version": "1.0.4",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/rust-lang/cfg-if",
+    "authors": [
+      "Alex Crichton <alex@alexcrichton.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/cfg-if-1.0.4/LICENSE-APACHE",
+      "licenses/rust/cfg-if-1.0.4/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "color_quant",
+    "version": "1.1.0",
+    "license": "MIT",
+    "repository": "https://github.com/image-rs/color_quant.git",
+    "authors": [
+      "nwin <nwin@users.noreply.github.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/color_quant-1.1.0/LICENSE"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "crc32fast",
+    "version": "1.5.0",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/srijs/rust-crc32fast",
+    "authors": [
+      "Sam Rijs <srijs@airpost.net>",
+      "Alex Crichton <alex@alexcrichton.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/crc32fast-1.5.0/LICENSE-APACHE",
+      "licenses/rust/crc32fast-1.5.0/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "equivalent",
+    "version": "1.0.2",
+    "license": "Apache-2.0 OR MIT",
+    "repository": "https://github.com/indexmap-rs/equivalent",
+    "authors": [],
+    "license_texts": [
+      "licenses/rust/equivalent-1.0.2/LICENSE-APACHE",
+      "licenses/rust/equivalent-1.0.2/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "fdeflate",
+    "version": "0.3.7",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/image-rs/fdeflate",
+    "authors": [
+      "The image-rs Developers"
+    ],
+    "license_texts": [
+      "licenses/rust/fdeflate-0.3.7/LICENSE-APACHE",
+      "licenses/rust/fdeflate-0.3.7/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "flate2",
+    "version": "1.1.9",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/rust-lang/flate2-rs",
+    "authors": [
+      "Alex Crichton <alex@alexcrichton.com>",
+      "Josh Triplett <josh@joshtriplett.org>"
+    ],
+    "license_texts": [
+      "licenses/rust/flate2-1.1.9/LICENSE-APACHE",
+      "licenses/rust/flate2-1.1.9/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "foldhash",
+    "version": "0.1.5",
+    "license": "Zlib",
+    "repository": "https://github.com/orlp/foldhash",
+    "authors": [
+      "Orson Peters <orsonpeters@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/foldhash-0.1.5/LICENSE"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "fontdue",
+    "version": "0.9.3",
+    "license": "MIT OR Apache-2.0 OR Zlib",
+    "repository": "https://github.com/mooman219/fontdue",
+    "authors": [
+      "Joe Cumbo <mooman219@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/fontdue-0.9.3/LICENSE-APACHE",
+      "licenses/rust/fontdue-0.9.3/LICENSE-MIT",
+      "licenses/rust/fontdue-0.9.3/LICENSE-ZLIB"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "glam",
+    "version": "0.27.0",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/bitshifter/glam-rs",
+    "authors": [
+      "Cameron Hart <cameron.hart@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/glam-0.27.0/LICENSE-APACHE",
+      "licenses/rust/glam-0.27.0/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "hashbrown",
+    "version": "0.15.5",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/rust-lang/hashbrown",
+    "authors": [
+      "Amanieu d'Antras <amanieu@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/hashbrown-0.15.5/LICENSE-APACHE",
+      "licenses/rust/hashbrown-0.15.5/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "image",
+    "version": "0.24.9",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/image-rs/image",
+    "authors": [
+      "The image-rs Developers"
+    ],
+    "license_texts": [
+      "licenses/rust/image-0.24.9/LICENSE-APACHE",
+      "licenses/rust/image-0.24.9/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "itoa",
+    "version": "1.0.18",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/dtolnay/itoa",
+    "authors": [
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/itoa-1.0.18/LICENSE-APACHE",
+      "licenses/rust/itoa-1.0.18/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "libc",
+    "version": "0.2.186",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/rust-lang/libc",
+    "authors": [
+      "The Rust Project Developers"
+    ],
+    "license_texts": [
+      "licenses/rust/libc-0.2.186/LICENSE-APACHE",
+      "licenses/rust/libc-0.2.186/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "macroquad",
+    "version": "0.4.15",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/not-fl3/macroquad",
+    "authors": [
+      "not-fl3 <not.fl3@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/macroquad-0.4.15/LICENSE-APACHE",
+      "licenses/rust/macroquad-0.4.15/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "macroquad_macro",
+    "version": "0.1.8",
+    "license": "MIT/Apache-2.0",
+    "repository": "https://github.com/not-fl3/macroquad",
+    "authors": [
+      "not-fl3 <not.fl3@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/macroquad_macro-0.1.8/LICENSE-APACHE",
+      "licenses/rust/macroquad_macro-0.1.8/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "malloc_buf",
+    "version": "0.0.6",
+    "license": "MIT",
+    "repository": "https://github.com/SSheldon/malloc_buf",
+    "authors": [
+      "Steven Sheldon"
+    ],
+    "license_texts": [
+      "licenses/rust/malloc_buf-0.0.6/LICENSE"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "memchr",
+    "version": "2.8.0",
+    "license": "Unlicense OR MIT",
+    "repository": "https://github.com/BurntSushi/memchr",
+    "authors": [
+      "Andrew Gallant <jamslam@gmail.com>",
+      "bluss"
+    ],
+    "license_texts": [
+      "licenses/rust/memchr-2.8.0/COPYING",
+      "licenses/rust/memchr-2.8.0/LICENSE-MIT",
+      "licenses/rust/memchr-2.8.0/UNLICENSE"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "miniquad",
+    "version": "0.4.10",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/not-fl3/miniquad",
+    "authors": [
+      "not-fl3 <not.fl3@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/miniquad-0.4.10/LICENSE-APACHE",
+      "licenses/rust/miniquad-0.4.10/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "miniz_oxide",
+    "version": "0.8.9",
+    "license": "MIT OR Zlib OR Apache-2.0",
+    "repository": "https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide",
+    "authors": [
+      "Frommi <daniil.liferenko@gmail.com>",
+      "oyvindln <oyvindln@users.noreply.github.com>",
+      "Rich Geldreich richgel99@gmail.com"
+    ],
+    "license_texts": [
+      "licenses/rust/miniz_oxide-0.8.9/LICENSE",
+      "licenses/rust/miniz_oxide-0.8.9/LICENSE-APACHE.md",
+      "licenses/rust/miniz_oxide-0.8.9/LICENSE-MIT.md",
+      "licenses/rust/miniz_oxide-0.8.9/LICENSE-ZLIB.md"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "ndk-sys",
+    "version": "0.2.2",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/rust-windowing/android-ndk-rs",
+    "authors": [
+      "The Rust Windowing contributors"
+    ],
+    "license_texts": [
+      "licenses/rust/ndk-sys-0.2.2/LICENSE-APACHE",
+      "licenses/rust/ndk-sys-0.2.2/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "num-traits",
+    "version": "0.2.19",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/rust-num/num-traits",
+    "authors": [
+      "The Rust Project Developers"
+    ],
+    "license_texts": [
+      "licenses/rust/num-traits-0.2.19/LICENSE-APACHE",
+      "licenses/rust/num-traits-0.2.19/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "objc-rs",
+    "version": "0.2.8",
+    "license": "MIT",
+    "repository": "http://github.com/raphamorim/objc-rs",
+    "authors": [
+      "Steven Sheldon",
+      "Raphael Amorim"
+    ],
+    "license_texts": [
+      "licenses/rust/objc-rs-0.2.8/LICENSE.txt"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "png",
+    "version": "0.17.16",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/image-rs/image-png",
+    "authors": [
+      "The image-rs Developers"
+    ],
+    "license_texts": [
+      "licenses/rust/png-0.17.16/LICENSE-APACHE",
+      "licenses/rust/png-0.17.16/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "proc-macro2",
+    "version": "1.0.106",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/dtolnay/proc-macro2",
+    "authors": [
+      "David Tolnay <dtolnay@gmail.com>",
+      "Alex Crichton <alex@alexcrichton.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/proc-macro2-1.0.106/LICENSE-APACHE",
+      "licenses/rust/proc-macro2-1.0.106/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "quad-rand",
+    "version": "0.2.3",
+    "license": "MIT",
+    "repository": "https://github.com/not-fl3/quad-rand",
+    "authors": [
+      "not-fl3 <not.fl3@gmail.com>"
+    ],
+    "license_texts": [],
+    "notice_basis": "Cargo registry package metadata"
+  },
+  {
+    "name": "quote",
+    "version": "1.0.45",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/dtolnay/quote",
+    "authors": [
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/quote-1.0.45/LICENSE-APACHE",
+      "licenses/rust/quote-1.0.45/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "serde",
+    "version": "1.0.228",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/serde-rs/serde",
+    "authors": [
+      "Erick Tryzelaar <erick.tryzelaar@gmail.com>",
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/serde-1.0.228/LICENSE-APACHE",
+      "licenses/rust/serde-1.0.228/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "serde_core",
+    "version": "1.0.228",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/serde-rs/serde",
+    "authors": [
+      "Erick Tryzelaar <erick.tryzelaar@gmail.com>",
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/serde_core-1.0.228/LICENSE-APACHE",
+      "licenses/rust/serde_core-1.0.228/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "serde_derive",
+    "version": "1.0.228",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/serde-rs/serde",
+    "authors": [
+      "Erick Tryzelaar <erick.tryzelaar@gmail.com>",
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/serde_derive-1.0.228/LICENSE-APACHE",
+      "licenses/rust/serde_derive-1.0.228/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "serde_json",
+    "version": "1.0.149",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/serde-rs/json",
+    "authors": [
+      "Erick Tryzelaar <erick.tryzelaar@gmail.com>",
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/serde_json-1.0.149/LICENSE-APACHE",
+      "licenses/rust/serde_json-1.0.149/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "simd-adler32",
+    "version": "0.3.9",
+    "license": "MIT",
+    "repository": "https://github.com/mcountryman/simd-adler32",
+    "authors": [
+      "Marvin Countryman <me@maar.vin>"
+    ],
+    "license_texts": [
+      "licenses/rust/simd-adler32-0.3.9/LICENSE.md"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "spectral-pruner",
+    "version": "1.0.0",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/steph4n-gh/spectral-pruner",
+    "authors": [
+      "Stephan Arrington"
+    ],
+    "license_texts": [],
+    "notice_basis": "Cargo registry package metadata"
+  },
+  {
+    "name": "syn",
+    "version": "2.0.117",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/dtolnay/syn",
+    "authors": [
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/syn-2.0.117/LICENSE-APACHE",
+      "licenses/rust/syn-2.0.117/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "ttf-parser",
+    "version": "0.21.1",
+    "license": "MIT OR Apache-2.0",
+    "repository": "https://github.com/RazrFalcon/ttf-parser",
+    "authors": [
+      "Yevhenii Reizner <razrfalcon@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/ttf-parser-0.21.1/LICENSE-APACHE",
+      "licenses/rust/ttf-parser-0.21.1/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "unicode-ident",
+    "version": "1.0.24",
+    "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+    "repository": "https://github.com/dtolnay/unicode-ident",
+    "authors": [
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/unicode-ident-1.0.24/LICENSE-APACHE",
+      "licenses/rust/unicode-ident-1.0.24/LICENSE-MIT",
+      "licenses/rust/unicode-ident-1.0.24/LICENSE-UNICODE"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "winapi",
+    "version": "0.3.9",
+    "license": "MIT/Apache-2.0",
+    "repository": "https://github.com/retep998/winapi-rs",
+    "authors": [
+      "Peter Atashian <retep998@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/winapi-0.3.9/LICENSE-APACHE",
+      "licenses/rust/winapi-0.3.9/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  },
+  {
+    "name": "winapi-i686-pc-windows-gnu",
+    "version": "0.4.0",
+    "license": "MIT/Apache-2.0",
+    "repository": "https://github.com/retep998/winapi-rs",
+    "authors": [
+      "Peter Atashian <retep998@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/winapi-i686-pc-windows-gnu-0.4.0/LICENSE-APACHE",
+      "licenses/rust/winapi-i686-pc-windows-gnu-0.4.0/LICENSE-MIT"
+    ],
+    "notice_basis": "Import crate metadata names same winapi upstream repository; parent winapi license texts retained. No Windows binary published."
+  },
+  {
+    "name": "winapi-x86_64-pc-windows-gnu",
+    "version": "0.4.0",
+    "license": "MIT/Apache-2.0",
+    "repository": "https://github.com/retep998/winapi-rs",
+    "authors": [
+      "Peter Atashian <retep998@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/winapi-x86_64-pc-windows-gnu-0.4.0/LICENSE-APACHE",
+      "licenses/rust/winapi-x86_64-pc-windows-gnu-0.4.0/LICENSE-MIT"
+    ],
+    "notice_basis": "Import crate metadata names same winapi upstream repository; parent winapi license texts retained. No Windows binary published."
+  },
+  {
+    "name": "zmij",
+    "version": "1.0.21",
+    "license": "MIT",
+    "repository": "https://github.com/dtolnay/zmij",
+    "authors": [
+      "David Tolnay <dtolnay@gmail.com>"
+    ],
+    "license_texts": [
+      "licenses/rust/zmij-1.0.21/LICENSE-MIT"
+    ],
+    "notice_basis": "Package metadata and copied upstream license texts"
+  }
+]

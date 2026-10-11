@@ -1,0 +1,290 @@
+{
+  "layers": [
+    0,
+    2
+  ],
+  "layer_names": {
+    "0": "F.Cu",
+    "2": "B.Cu"
+  },
+  "outline": [
+    {
+      "shell": [
+        [
+          2,
+          14
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          6.65,
+          10
+        ],
+        [
+          6.65,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          7.35,
+          6
+        ],
+        [
+          7.35,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          14
+        ]
+      ],
+      "holes": []
+    }
+  ],
+  "items": [
+    {
+      "net": 1,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          7,
+          12
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                6.8,
+                12.2
+              ],
+              [
+                6.8,
+                11.8
+              ],
+              [
+                7.2,
+                11.8
+              ],
+              [
+                7.2,
+                12.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    },
+    {
+      "net": 1,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          7,
+          4
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                6.8,
+                4.199999999999999
+              ],
+              [
+                6.8,
+                3.8000000000000007
+              ],
+              [
+                7.2,
+                3.8000000000000007
+              ],
+              [
+                7.2,
+                4.199999999999999
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    },
+    {
+      "net": 2,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          5,
+          12
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                4.8,
+                12.2
+              ],
+              [
+                4.8,
+                11.8
+              ],
+              [
+                5.2,
+                11.8
+              ],
+              [
+                5.2,
+                12.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    },
+    {
+      "net": 2,
+      "kind": "pad",
+      "drill_forbidden": true,
+      "terminals": [
+        [
+          5,
+          4
+        ]
+      ],
+      "clearance": 0.15,
+      "shapes": {
+        "0": [
+          {
+            "shell": [
+              [
+                4.8,
+                4.199999999999999
+              ],
+              [
+                4.8,
+                3.8000000000000007
+              ],
+              [
+                5.2,
+                3.8000000000000007
+              ],
+              [
+                5.2,
+                4.199999999999999
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      }
+    }
+  ],
+  "holes": [],
+  "keepouts": [
+    {
+      "layers": [
+        0,
+        2
+      ],
+      "tracks": true,
+      "vias": true,
+      "shapes": [
+        {
+          "shell": [
+            [
+              8,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              5
+            ],
+            [
+              8,
+              5
+            ]
+          ],
+          "holes": []
+        }
+      ]
+    }
+  ],
+  "tracks": [],
+  "vias": [],
+  "edge_clearance": 0.05,
+  "hole_clearance": 0.15,
+  "hole_to_hole": 0.15,
+  "nets": {
+    "1": {
+      "name": "signal-1",
+      "width": 0.15,
+      "clearance": 0.15,
+      "via_diameter": 0.6,
+      "via_drill": 0.3
+    },
+    "2": {
+      "name": "signal-2",
+      "width": 0.15,
+      "clearance": 0.15,
+      "via_diameter": 0.6,
+      "via_drill": 0.3
+    }
+  },
+  "routing_profile": {
+    "net_limits": [
+      {
+        "net": "signal-1",
+        "min_width_mm": 0.15,
+        "allowed_layers": [
+          "F.Cu"
+        ],
+        "max_vias": 0
+      },
+      {
+        "net": "signal-2",
+        "min_width_mm": 0.15,
+        "allowed_layers": [
+          "F.Cu"
+        ],
+        "max_vias": 0
+      }
+    ]
+  }
+}

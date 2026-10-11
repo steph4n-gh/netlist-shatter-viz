@@ -1,0 +1,173 @@
+{
+  "width": 30.0,
+  "height": 20.0,
+  "thickness": 1.6,
+  "footprints": [
+    {
+      "reference": "R45",
+      "value": "rotation fixture",
+      "package": "C_0805_2012Metric",
+      "position": {
+        "x": 10.0,
+        "y": 10.0
+      },
+      "rotation": 45.0,
+      "pads": [
+        {
+          "pin_number": "1",
+          "pin_name": "1",
+          "relative_pos": {
+            "x": -0.95,
+            "y": 0.0
+          },
+          "shape": {
+            "Rect": {
+              "width": 1.0,
+              "height": 1.3
+            }
+          },
+          "pad_type": {
+            "Smd": {
+              "layer": "FCu"
+            }
+          },
+          "net": null
+        },
+        {
+          "pin_number": "2",
+          "pin_name": "2",
+          "relative_pos": {
+            "x": 0.95,
+            "y": 0.0
+          },
+          "shape": {
+            "Rect": {
+              "width": 1.0,
+              "height": 1.3
+            }
+          },
+          "pad_type": {
+            "Smd": {
+              "layer": "FCu"
+            }
+          },
+          "net": null
+        }
+      ],
+      "silkscreen_lines": []
+    },
+    {
+      "reference": "O30",
+      "value": "rotation fixture",
+      "package": "C_0805_2012Metric",
+      "position": {
+        "x": 20.0,
+        "y": 10.0
+      },
+      "rotation": 30.0,
+      "pads": [
+        {
+          "pin_number": "1",
+          "pin_name": "1",
+          "relative_pos": {
+            "x": -0.95,
+            "y": 0.0
+          },
+          "shape": {
+            "Obround": {
+              "width": 1.0,
+              "height": 2.2
+            }
+          },
+          "pad_type": {
+            "Smd": {
+              "layer": "FCu"
+            }
+          },
+          "net": null
+        },
+        {
+          "pin_number": "2",
+          "pin_name": "2",
+          "relative_pos": {
+            "x": 0.95,
+            "y": 0.0
+          },
+          "shape": {
+            "Obround": {
+              "width": 1.0,
+              "height": 2.2
+            }
+          },
+          "pad_type": {
+            "Smd": {
+              "layer": "FCu"
+            }
+          },
+          "net": null
+        }
+      ],
+      "silkscreen_lines": []
+    },
+    {
+      "reference": "J120",
+      "value": "rotation fixture",
+      "package": "C_0805_2012Metric",
+      "position": {
+        "x": 15.0,
+        "y": 15.0
+      },
+      "rotation": 120.0,
+      "pads": [
+        {
+          "pin_number": "1",
+          "pin_name": "1",
+          "relative_pos": {
+            "x": -0.95,
+            "y": 0.0
+          },
+          "shape": {
+            "Rect": {
+              "width": 1.2,
+              "height": 1.6
+            }
+          },
+          "pad_type": {
+            "ThroughHole": {
+              "drill": 0.6,
+              "outer_diameter": 1.2
+            }
+          },
+          "net": null
+        },
+        {
+          "pin_number": "2",
+          "pin_name": "2",
+          "relative_pos": {
+            "x": 0.95,
+            "y": 0.0
+          },
+          "shape": {
+            "Rect": {
+              "width": 1.2,
+              "height": 1.6
+            }
+          },
+          "pad_type": {
+            "ThroughHole": {
+              "drill": 0.6,
+              "outer_diameter": 1.2
+            }
+          },
+          "net": null
+        }
+      ],
+      "silkscreen_lines": []
+    }
+  ],
+  "tracks": [],
+  "vias": [],
+  "net_names": {
+    "0": ""
+  }
+}
