@@ -4,7 +4,7 @@ A local Rust and Python workbench for PCB layout experiments. Supply a circuit
 with exact footprints or a KiCad project, inspect placements, try routing or
 repair, and review the resulting native checks and manufacturing-file exports.
 
-**Public alpha: `v0.1.0-alpha.1`.** This is an experimental software release.
+**Public alpha: [`v0.1.0-alpha.1`](https://github.com/steph4n-gh/netlist-shatter-viz/releases/tag/v0.1.0-alpha.1).** This is an experimental software release.
 **Pico Ultimate remains incomplete: `RGB_DATA` and `I2C_SCL` are open, and there
 is no completed Pico engineering handoff.** No included design has been
 physically validated or approved for manufacturing release.
@@ -48,6 +48,6 @@ with their own licenses. Preserve the licenses of projects you import or
 redistribute.
 
 [Release notes](docs/RELEASE_NOTES.md) describe the alpha scope and its recorded
-verification. Report reproducible problems through the repository's Issues
+verification. [Testing](docs/TESTING.md) lists the included local checks. Report reproducible problems through the repository's Issues
 page, including the alpha version, platform, tool versions, commands and the
 relevant job findings. Review project files before attaching them publicly.
